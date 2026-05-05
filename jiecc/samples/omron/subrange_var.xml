@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smcext="https://www.ia.omron.com/Smc" xsi:schemaLocation="https://www.ia.omron.com/Smc%20IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" schemaVersion="1">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+<AddDataInfo><Info name="https://www.ia.omron.com/Smc IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" vendor="https://www.ia.omron.com/Smc" /></AddDataInfo>
+</ContentHeader>
+<Types><GlobalNamespace>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="rangev">
+			<Type><TypeName>int(-100..100)</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="-100" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="range_array">
+			<Type><InstantlyDefinedType xsi:type="ArrayTypeSpec"><BaseType><TypeName>int(-2..2)</TypeName></BaseType><DimensionSpec dimensionNumber="1"><IndexRange lower="0" upper="1" /></DimensionSpec></InstantlyDefinedType></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>;</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

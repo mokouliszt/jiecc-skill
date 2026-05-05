@@ -1,0 +1,31 @@
+function no_return_func
+var_input
+	addend: dint := 1;
+end_var
+{#if not (_KEYENCE or _MITSUBISHI)}
+	var_external g_counter: dint; end_var
+{#else}
+	var g_counter: dint; end_var
+{#endif}
+//{st}
+g_counter := g_counter + addend;
+//{end}
+end_function
+
+function increment_func: int
+	var_input
+		in: int;
+	end_var
+//{st}
+increment_func := in + 1;
+//{end}
+end_function
+
+program Main
+	var_temp intv: int; end_var
+//{st}
+no_return_func(1);
+
+intv := increment_func(2); // intv = 3; 2 + 1
+//{end}
+end_program

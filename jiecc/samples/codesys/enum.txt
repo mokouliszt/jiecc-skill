@@ -1,0 +1,16 @@
+type
+	e_t: (e0, e1, e2) := e0;
+end_type
+
+function_block fb
+var
+	ev: e_t := e0;
+end_var
+//{st}
+{#if not (_CODESYS)}
+ev := e_t#e0;
+{#else}
+ev := e_t.e0;
+{#endif}
+//{end}
+end_function_block

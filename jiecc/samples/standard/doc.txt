@@ -1,0 +1,34 @@
+type
+	// {doc: s_t comment}
+	s_t: struct
+{#if not (_MITSUBISHI)}
+		// {doc: m0 comment}
+		m0: dint;
+		m1: bool (*{doc: m1 comment}*);
+{#else}
+		m0: dint;
+		m1: bool;
+{#endif}
+	end_struct;
+{#if not (_KEYENCE or _MITSUBISHI)}
+	// {doc: e_t comment}
+	e_t: (/*{doc: e0 comment}*/ e0, /*{doc: e1 comment}*/ e1);
+{#endif}
+end_type
+
+// {doc: fun comment}
+{#if _OMRON}
+// {return-doc: return var comment for omron only}
+{#endif}
+function func: bool
+	var_input
+{#if not (_MITSUBISHI)}
+		// {doc: i_1 comment}
+		i_1: int;
+		i_2: int {doc: i_2 comment};
+{#else}
+		i_1: int;
+		i_2: int;
+{#endif}
+	end_var
+end_function

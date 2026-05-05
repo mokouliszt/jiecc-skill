@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="sep">
+			<Type><TypeName>string[2]</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="'$N'" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="s_1">
+			<Type><TypeName>string[100]</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="'Hoge'" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>
+
+
+s_1 := concat(concat('1,2,3', sep), '4,5,6');
+
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

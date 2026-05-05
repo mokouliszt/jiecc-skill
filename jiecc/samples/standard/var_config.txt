@@ -1,0 +1,23 @@
+function_block fb
+var
+	n at %I*: int;
+end_var
+end_function_block
+
+program Main
+var
+	v1: fb;
+	v2: fb;
+end_var
+end_program
+
+configuration cfg
+	resource rsc on plc
+		// program main_program with primary_task: Main();
+	end_resource
+
+	var_config
+		rsc.main_program.v1.n at %QW1: int := 2;
+		rsc.main_program.v2.n at %QW2: int := 3;
+	end_var
+end_configuration

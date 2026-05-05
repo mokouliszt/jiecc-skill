@@ -1,0 +1,34 @@
+{#if not (_KEYENCE or _MITSUBISHI or _CODESYS)}
+// The IEC 61131-3 standard does not mandate whether EN/ENO must be explicitly declared when used.
+function my_div: lreal
+var_input en: bool; end_var
+var_output eno: bool; end_var
+{#elif _KEYENCE}
+// Keyence's KV Studio does not require explicit declaration of EN/ENO.
+function my_div: lreal
+{#elif _MITSUBISHI}
+// Mitsubishi's GX Works 3 require FunPouProperties.isEnEno property.
+function {FunPouProperties.isEnEno: true} my_div: lreal
+{#elif _CODESYS}
+// see https://content.helpme-codesys.com/en/CODESYS%20LD%20FBD/_cds_fbd_ld_il_element_box_en_eno.html
+function my_div: lreal
+{#endif}
+var_input
+	d_1: lreal;
+	d_2: lreal;
+end_var
+//{st}
+{#if not (_CODESYS)}
+if d_2 <> 0.0 then
+	my_div := d_1 / d_2;
+else
+	eno := false;
+end_if;
+{#else}
+// CODESYS does not allow access to the EN/ENO in a POU.
+if d_2 <> 0.0 then
+	my_div := d_1 / d_2;
+end_if;
+{#endif}
+//{end}
+end_function

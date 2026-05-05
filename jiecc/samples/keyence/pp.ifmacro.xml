@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="msg">
+			<Type><TypeName>string[100]</TypeName></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>
+
+
+msg := 'message for specific target.';
+
+</ST></BodyContent>
+		<BodyContent xsi:type="LD">
+<Rung evaluationOrder="1">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="END">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung>
+<Rung evaluationOrder="2">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="ENDH">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

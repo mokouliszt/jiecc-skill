@@ -1,0 +1,17 @@
+// {company-name: Jiecc Corp.}
+// {company-url: https://www.graviness.com/iec_61131-3/jiecc.html}
+// {product-name: Jiecc}
+// {product-version: 0.3.14}
+{#if not (_MITSUBISHI)}
+// {product-release: statble}
+{#endif}
+
+// {content-name: Header info. sample}
+{#if not (_MITSUBISHI)}
+// {content-version: 1.0}
+{#endif}
+// {creation-datetime: 2023-09-17T00:00:00+09:00}
+// {modification-datetime: TODAY}
+{#if not (_MITSUBISHI)}
+// {language: ja-JP}
+{#endif}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<DataTypeDecl name="n_t">
+<UserDefinedTypeSpec xsi:type="EnumTypeWithNamedValueSpec">
+	<Enumerator name="n0" value="2" />
+	<Enumerator name="n1" value="3" />
+	<Enumerator name="n2" value="5" />
+	<BaseType>INT</BaseType>
+	<InitialValue>n0</InitialValue>
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="nv">
+			<Type><TypeName>n_t</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="n0" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>
+
+
+nv := n_t.n0 + 1;
+
+
+
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

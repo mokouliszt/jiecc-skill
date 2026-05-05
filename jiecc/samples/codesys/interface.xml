@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<Interface name="x">
+	<Method name="f">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+	</Method>
+</Interface>
+<Interface name="y">
+	<Method name="g">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i1" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		<InputVars>
+			<Variable name="i2" orderWithinParamSet="2">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+	</Method>
+</Interface>
+<Class name="z" abstract="true">
+	<Implements><TypeName>x</TypeName></Implements>
+	<Implements><TypeName>y</TypeName></Implements>
+	<Method name="f" accessSpecifier="public" abstract="true">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+	</Method>
+	<Method name="g" accessSpecifier="public" abstract="true">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i1" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		<InputVars>
+			<Variable name="i2" orderWithinParamSet="2">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+	</Method>
+	<Method name="h" accessSpecifier="public">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i1" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		<InputVars>
+			<Variable name="i2" orderWithinParamSet="2">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+		<Body>
+			<BodyContent xsi:type="ST"><ST>h := this^.g(this^.f(i1), this^.f(i2));</ST></BodyContent>
+		</Body>
+	</Method>
+</Class>
+<Class name="a">
+	<Extends><TypeName>z</TypeName></Extends>
+	<Method name="f" accessSpecifier="public" override="true">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+		<Body>
+			<BodyContent xsi:type="ST"><ST>f := i + 1;</ST></BodyContent>
+		</Body>
+	</Method>
+	<Method name="g" accessSpecifier="public" override="true">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i1" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		<InputVars>
+			<Variable name="i2" orderWithinParamSet="2">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+		<Body>
+			<BodyContent xsi:type="ST"><ST>g := i1 + i2;</ST></BodyContent>
+		</Body>
+	</Method>
+</Class>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="av">
+			<Type><TypeName>a</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="n">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>n := av.h(2, 3); // n = 7; g(f(2), f(3))=g(3, 4)
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<DataTypeDecl name="r1_t">
+<UserDefinedTypeSpec xsi:type="ReferenceTypeSpec"><ReferenceTo><TypeName>int</TypeName></ReferenceTo></UserDefinedTypeSpec>
+</DataTypeDecl>
+<DataTypeDecl name="r2_t">
+<UserDefinedTypeSpec xsi:type="ReferenceTypeSpec"><ReferenceTo><TypeName>int</TypeName></ReferenceTo></UserDefinedTypeSpec>
+</DataTypeDecl>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="v1">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="2" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v2">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="r1">
+			<Type><InstantlyDefinedType xsi:type="ReferenceTypeSpec"><ReferenceTo><TypeName>int</TypeName></ReferenceTo></InstantlyDefinedType></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="r2">
+			<Type><InstantlyDefinedType xsi:type="ReferenceTypeSpec"><ReferenceTo><TypeName>int</TypeName></ReferenceTo></InstantlyDefinedType></Type>
+			<InitialValue>
+				<SimpleValue value="null" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>
+r2 := ref(v2);
+r2^ := v1;
+
+
+
+
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

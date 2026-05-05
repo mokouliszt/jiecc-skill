@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smcext="https://www.ia.omron.com/Smc" xsi:schemaLocation="https://www.ia.omron.com/Smc%20IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" schemaVersion="1">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+<AddDataInfo><Info name="https://www.ia.omron.com/Smc IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" vendor="https://www.ia.omron.com/Smc" /></AddDataInfo>
+</ContentHeader>
+<Types><GlobalNamespace>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="v_00">
+			<Type><TypeName>sint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="0" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_01">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="1" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_02">
+			<Type><TypeName>dint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="2" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_03">
+			<Type><TypeName>lint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="3" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_04">
+			<Type><TypeName>usint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="4" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_05">
+			<Type><TypeName>uint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="5" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_06">
+			<Type><TypeName>udint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="6" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_07">
+			<Type><TypeName>ulint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="7" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_08">
+			<Type><TypeName>real</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="0.8" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_09">
+			<Type><TypeName>lreal</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="0.9" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_16">
+			<Type><TypeName>time</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="time#16ms" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_20">
+			<Type><TypeName>bool</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="true" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_24">
+			<Type><TypeName>byte</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="byte#16#24" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_25">
+			<Type><TypeName>word</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="word#16#2500" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_26">
+			<Type><TypeName>dword</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="dword#16#26000000" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_27">
+			<Type><TypeName>lword</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="lword#16#2700000000000000" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_40">
+			<Type><TypeName>string</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="'No.40'" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_50">
+			<Type><TypeName>date</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="date#2050-01-01" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_52">
+			<Type><TypeName>time_of_day</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="time_of_day#00:52:01" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_52_2">
+			<Type><TypeName>time_of_day</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="time_of_day#12:52:02" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_54">
+			<Type><TypeName>date_and_time</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="date_and_time#2054-01-01-00:54:01" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_54_2">
+			<Type><TypeName>date_and_time</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="date_and_time#2054-01-02-00:54:02" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>;</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

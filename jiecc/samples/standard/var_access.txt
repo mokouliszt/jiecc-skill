@@ -1,0 +1,6 @@
+configuration cfg
+	var_access
+		g1: g: bool read_only;
+		g2: main_program.fbinstance.v: int read_write;
+	end_var
+end_configuration

@@ -1,0 +1,21 @@
+namespace a
+	namespace b
+		function_block fb
+		end_function_block
+{#if not (_OMRON)}
+		namespace internal c
+		end_namespace
+{#endif}
+	end_namespace
+end_namespace
+
+program Main
+{#if not (_OMRON)}
+	using _.a.b;
+{#else}
+	using \\a\b;
+{#endif}
+	var
+		instance: fb;
+	end_var
+end_program

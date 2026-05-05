@@ -1,0 +1,7 @@
+program Main
+	var o: bool; end_var
+(*{il}*)
+LD true
+ST o
+(*{end}*)
+end_program

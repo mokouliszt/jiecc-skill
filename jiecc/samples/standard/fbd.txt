@@ -1,0 +1,29 @@
+program Main
+	var o: bool; end_var
+(*{fbd}*)
+<Network evaluationOrder="1">
+    <FbdObject xsi:type="DataSource" identifier="true">
+        <ConnectionPointOut connectionPointOutId="1" />
+    </FbdObject>
+    <FbdObject xsi:type="Block" typeName="NOT">
+        <InputVariables>
+            <InputVariable parameterName="">
+                <ConnectionPointIn>
+                    <Connection refConnectionPointOutId="1" />
+                </ConnectionPointIn>
+            </InputVariable>
+        </InputVariables>
+        <OutputVariables>
+            <OutputVariable parameterName="">
+                <ConnectionPointOut connectionPointOutId="2" />
+            </OutputVariable>
+        </OutputVariables>
+    </FbdObject>
+    <FbdObject xsi:type="DataSink" identifier="x">
+        <ConnectionPointIn>
+            <Connection refConnectionPointOutId="2" />
+        </ConnectionPointIn>
+    </FbdObject>
+</Network>
+(*{end}*)
+end_program

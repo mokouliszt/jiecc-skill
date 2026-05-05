@@ -1,0 +1,49 @@
+function_block myfb
+{#if not (_KEYENCE or _MITSUBISHI or _CODESYS)}
+	var_input
+		in: bool r_edge;
+	end_var
+{#else}
+	var_input
+		in: bool;
+	end_var
+{#endif}
+{#if not (_KEYENCE or _CODESYS)}
+	var constant retain
+		PI: lreal := 3.141592;
+	end_var
+{#elif _KEYENCE}
+	// The Keyence PLC does not support specifying both the constant and retain attributes at the same time.
+	var constant
+		PI: lreal := 3.141592;
+	end_var
+	var retain
+		PI2: lreal := 9.869604;
+	end_var
+{#elif _CODESYS}
+	// The CODESYS does not support constant and retain attr.
+	var
+		PI: lreal := 3.141592;
+	end_var
+{#endif}
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+	var public
+		atv at %IX0.0: bool;
+	end_var
+{#elif _OMRON}
+	var
+		atv at %W1.0: bool;
+	end_var
+{#else}
+	// AT attribute cannot be used with static variables on Keyence and Mitsubishi PLCs.
+	var
+		atv: bool;
+	end_var
+{#endif}
+end_function_block
+
+program Main
+var
+	myinstance: myfb;
+end_var
+end_program

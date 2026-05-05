@@ -1,0 +1,18 @@
+program Main
+	var
+{#if not (_CODESYS)}
+		sep: string := '$n';
+{#else}
+		// error, if no size string decl with the initial value.
+		sep: string[2] := '$n';
+{#endif}
+		s_1: string[100] := 'Hoge';
+	end_var
+//{st}
+{#if not (_CODESYS)}
+s_1 := concat('1,2,3', sep, '4,5,6');
+{#else}
+s_1 := concat(concat('1,2,3', sep), '4,5,6');
+{#endif}
+//{end}
+end_program

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="Jiecc Corp." companyURL="https://www.graviness.com/iec_61131-3/jiecc.html" productName="Jiecc" productVersion="0.3.14" productRelease="statble" />
+<ContentHeader name="Header info. sample" version="1.0" creationDateTime="2023-09-17T00:00:00+09:00" modificationDateTime="2026-02-15T00:00:00+09:00" language="ja-JP">
+</ContentHeader>
+<Types><GlobalNamespace>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

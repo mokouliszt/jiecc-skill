@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- プログラムファイルに関するXML定義  -->
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.000" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10 GXW3_IEC61131_10_Ed1_0_ForGXW3.xsd">
+	<FileHeader companyName="MITSUBISHI ELECTRIC CORPORATION" companyURL="http://www.mitsubishielectric.com" productName="GX Works3" productVersion="ver.1.0"/>
+	<ContentHeader name="CONTENT NAME" creationDateTime="2023-09-17T00:00:00+09:00" modificationDateTime="2023-09-17T00:00:01+09:00"/>
+	<Types>
+		<GlobalNamespace>
+			<Documentation xsi:type="SimpleText">GlobalNamespaceのコメント</Documentation>
+			<AddData>
+				<Data name="http://www.mitsubishielectric.com/xml/FbFiles" handleUnknown="implementation">
+					<FbFiles>
+						<!--FBファイルの定義-->
+						<FbFile name="FbFile1" functionBlockType="macro" /><!--一般、マクロ-->
+						<FbFile name="FbFile2" functionBlockType="subroutine" /><!--一般、サブルーチン-->
+					</FbFiles>
+				</Data>
+				<Data name="http://www.mitsubishielectric.com/xml/FunFiles" handleUnknown="implementation">
+					<FunFiles>
+						<!--FUNファイルの定義-->
+						<FunFile name="FunFile1" /><!--一般-->
+					</FunFiles>
+				</Data>
+			</AddData>
+			<!--プログラム(ST)-->
+			<Program name="Program1">
+				<!--プログラムのコメント-->
+				<Documentation xsi:type="SimpleText">Program1のコメント</Documentation>
+				<AddData>
+					<!--プログラムのプロパティ-->
+					<Data name="http://www.mitsubishielectric.com/xml/PouProperties" handleUnknown="implementation">
+						<!--プログラムのプロパティ内容
+						　　title:タイトル
+								version:バージョン
+								helpFilePath:ヘルプのパス情報
+								supportVersion:サポートバージョン
+						-->
+						<PouProperties title="タイトル プログラムST(一般)" version="ver.1.003" helpFilePath="ヘルプのパス情報2" supportVersion="1.001W"/>
+					</Data>
+				</AddData>
+				<!--ローカルラベル(VAR)の定義-->
+				<Vars constant="false" retain="false" accessSpecifier="private">
+					<!--ビット型-->
+					<Variable name="Local1_1">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<!--行番号-->
+								<VariableLineNumber number="1"/>
+							</Data>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<!--コメント-->
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>Local1_1のコメント</CommentText>
+									</Comment>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<!--データ型-->
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<!--初期値-->
+						<InitialValue>
+							<SimpleValue value="TRUE"/>
+						</InitialValue>
+					</Variable>
+					<!--ワード[符号なし]/ビット配列[16ビット]型-->
+					<Variable name="Local1_4">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="4"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>WORD</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="14"/>
+						</InitialValue>
+					</Variable>
+					<!--ダブルワード[符号なし]/ビット配列[16ビット]-->
+					<Variable name="Local1_5">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="5"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>DWORD</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="15"/>
+						</InitialValue>
+					</Variable>
+					<!--ワード[符号付き]-->
+					<Variable name="Local1_6">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="6"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>INT</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="16"/>
+						</InitialValue>
+					</Variable>
+					<!--ダブルワード[符号付き]-->
+					<Variable name="Local1_7">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="7"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>DINT</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="17"/>
+						</InitialValue>
+					</Variable>
+					<!--単精度実数-->
+					<Variable name="Local1_8">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="8"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>REAL</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="1.8"/>
+						</InitialValue>
+					</Variable>
+					<!--倍精度実数-->
+					<Variable name="Local1_9">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="9"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>LREAL</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="1.9"/>
+						</InitialValue>
+					</Variable>
+					<!--時間-->
+					<Variable name="Local1_10">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="10"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>TIME</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="T#10h"/>
+						</InitialValue>
+					</Variable>
+					<!--文字列(32)-->
+					<Variable name="Local1_11">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="11"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>STRING[32]</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="'test11'"/>
+						</InitialValue>
+					</Variable>
+					<!--文字列[Unicoude](32)-->
+					<Variable name="Local1_12">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="12"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>WSTRING[32]</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="&quot;test12&quot;"/>
+						</InitialValue>
+					</Variable>
+					<!--ポインタ-->
+					<Variable name="Local1_13">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="13"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>POINTER</TypeName>
+						</Type>
+					</Variable>
+					<!--タイマ-->
+					<Variable name="Local1_14">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="14"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>TIMER</TypeName>
+						</Type>
+					</Variable>
+					<!--カウンタ-->
+					<Variable name="Local1_15">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="15"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>COUNTER</TypeName>
+						</Type>
+					</Variable>
+					<!--ロングカウンタ-->
+					<Variable name="Local1_16">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="16"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>LCOUNTER</TypeName>
+						</Type>
+					</Variable>
+					<!--積算タイマ-->
+					<Variable name="Local1_17">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="17"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>RETENTIVETIMER</TypeName>
+						</Type>
+					</Variable>
+					<!--ロング積算タイマ-->
+					<Variable name="Local1_18">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="18"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>LRETENTIVETIMER</TypeName>
+						</Type>
+					</Variable>
+					<!--ロングタイマ-->
+					<Variable name="Local1_19">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="19"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>LTIMER</TypeName>
+						</Type>
+					</Variable>
+					<!--構造体-->
+					<Variable name="Local1_20">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="20"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>Struct1</TypeName>
+						</Type>
+					</Variable>
+					<!--ファンクションブロック-->
+					<Variable name="Local1_21">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="21"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>FBPou1</TypeName>
+						</Type>
+					</Variable>
+					<!--ビット型(1次元配列)-->
+					<Variable name="Local1_22">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<!--行番号-->
+								<VariableLineNumber number="22"/>
+							</Data>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<!--コメント-->
+								<VariableComments>
+									<Comment number="6">
+										<!--ラベル自体のコメント-->
+										<CommentText>Local1_22のコメント</CommentText>
+									</Comment>
+									<Array>
+									<!--配列要素のコメント-->
+									<Element index="1">
+										<Comment number="6">
+											<CommentText>Local1_22[1]のコメント</CommentText>
+										</Comment>
+										<Bit index="5">
+											<!--ビットのコメント-->
+											<Comment number="6">
+												<CommentText>Local1_22[1].5のコメント</CommentText>
+											</Comment>
+										</Bit>
+									</Element>
+									</Array>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<!--データ型-->
+						<Type>
+							<TypeName>ARRAY[0..3] OF INT</TypeName>
+						</Type>
+					</Variable>
+					<!--ビット型(2次元配列)-->
+					<Variable name="Local1_23">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="23"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>ARRAY[0..3, 0..5] OF BOOL</TypeName>
+						</Type>
+					</Variable>
+					<!--ビット型(3次元配列)-->
+					<Variable name="Local1_24">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<VariableLineNumber number="24"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>ARRAY[0..3, 0..5, 0..7] OF BOOL</TypeName>
+						</Type>
+					</Variable>
+				</Vars>
+				<!--ローカルラベル(VAR_CONSTANT)の定義-->
+				<Vars constant="true" retain="false" accessSpecifier="private">
+					<Variable name="Local1_2">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<!--行番号-->
+								<VariableLineNumber number="2"/>
+							</Data>
+						</AddData>
+						<!--データ型-->
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<!--定数-->
+						<InitialValue>
+							<SimpleValue value="FALSE"></SimpleValue>
+						</InitialValue>
+					</Variable>
+				</Vars>
+				<!--ローカルラベル(VAR_RETAIN)の定義-->
+				<Vars constant="false" retain="true" accessSpecifier="private">
+					<Variable name="Local1_3">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<!--行番号-->
+								<VariableLineNumber number="3"/>
+							</Data>
+						</AddData>
+						<!--データ型-->
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<!--初期値-->
+						<InitialValue>
+							<SimpleValue value="FALSE"/>
+						</InitialValue>
+					</Variable>
+				</Vars>
+				<!-- プログラム本体の定義 -->
+				<MainBody>
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/BodyProperties" handleUnknown="implementation">
+							<!--1つ目のプログラム本体のプロパティ
+									orderWithinBodyProperties:プログラム本体に対応する番号
+									workSheetName:データ名
+									executeOrder:'実行順序
+							-->
+							<BodyProperties orderWithinBodyProperties="1" workSheetName="workSheet1" executeOrder="2"/>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/BodyProperties" handleUnknown="implementation">
+							<!--2つ目のプログラム本体のプロパティ-->
+							<BodyProperties orderWithinBodyProperties="2" workSheetName="workSheet2" executeOrder="1"/>
+						</Data>
+					</AddData>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義(1つ目のプログラム) -->
+						<ST>Local1_1:=B0;</ST>
+					</BodyContent>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義(2つ目のプログラム) -->
+						<ST>Local1_6:=W0;</ST>
+					</BodyContent>
+				</MainBody>
+			</Program>
+			<!--プログラム(ST)-->
+			<Program name="ProgramScan">
+				<!-- プログラム本体の定義 -->
+				<MainBody>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>B1:=B0;</ST>
+					</BodyContent>
+				</MainBody>
+			</Program>
+			<!--プログラム(ST)-->
+			<Program name="ProgramStandby">
+				<!-- プログラム本体の定義 -->
+				<MainBody>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>B3:=B2;</ST>
+					</BodyContent>
+				</MainBody>
+			</Program>
+			<!--プログラム(ST)-->
+			<Program name="ProgramFixedScan">
+				<!-- プログラム本体の定義 -->
+				<MainBody>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>B5:=B4;</ST>
+					</BodyContent>
+				</MainBody>
+			</Program>
+			<!--プログラム(ST)-->
+			<Program name="ProgramEvent">
+				<!-- プログラム本体の定義 -->
+				<MainBody>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>B7:=B6;</ST>
+					</BodyContent>
+				</MainBody>
+			</Program>
+			<!--プログラム(ST)-->
+			<Program name="ProgramNoExecution">
+				<!-- プログラム本体の定義 -->
+				<MainBody>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>B9:=B8;</ST>
+					</BodyContent>
+				</MainBody>
+			</Program>
+			<!--ファンクションブロックの定義(一般)-->
+			<FunctionBlock  name="FBPou1">
+				<Documentation xsi:type="SimpleText">FBPou1のコメント</Documentation>
+				<AddData>
+					<!--ファンクションブロックのプロパティ-->
+					<Data name="http://www.mitsubishielectric.com/xml/PouProperties" handleUnknown="implementation">
+						<!--ファンクションブロックのプロパティ内容
+						　　title:タイトル
+								version:バージョン
+								helpFilePath:ヘルプのパス情報
+								supportVersion:サポートバージョン
+						-->
+						<PouProperties title="タイトル FB(ST)" version="ver.1.012" helpFilePath="ヘルプのパス情報11" supportVersion="1.010W"></PouProperties>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/FbPouProperties" handleUnknown="implementation">
+						<!--ファンクションブロックのプロパティ内容
+						　　isEnEno:EN/ENOを使用する
+								isMcMcr:ENの制御にMC/MCRを使用する
+								labelAssignmentArea:ラベル予約領域
+								latchLabelAssignmentArea:ラッチラベル予約領域
+								signalFlowAssignmentArea:シグナルフロー予約領域
+						-->
+						<FbPouProperties isEnEno="false" isMcMcr="false" labelAssignmentArea="20" latchLabelAssignmentArea="12" signalFlowAssignmentArea="5"></FbPouProperties>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/FbPouFile" handleUnknown="implementation">
+						<!--FBファイルへの登録先-->
+						<FbPouFile name="FbFile1"></FbPouFile>
+					</Data>
+				</AddData>
+				<Parameters>
+					<!--ローカルラベルの定義(VAR_IN_OUT)-->
+					<InoutVars>
+						<Variable name="fb1_vio" orderWithinParamSet="1">
+							<AddData>
+								<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+									<VariableComments>
+										<Comment number="6">
+											<CommentText>fb1_vio(VAR_IN_OUT)のコメント</CommentText>
+										</Comment>
+									</VariableComments>
+								</Data>
+							</AddData>
+							<Type>
+								<TypeName>BOOL</TypeName>
+							</Type>
+						</Variable>
+					</InoutVars>
+					<!--ローカルラベルの定義(VAR_INPUT)-->
+					<InputVars>
+						<Variable name="fb1_vi" orderWithinParamSet="3">
+							<AddData>
+								<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+									<VariableComments>
+										<Comment number="6">
+											<CommentText>fb1_vi(VAR_INPUT)のコメント</CommentText>
+										</Comment>
+									</VariableComments>
+								</Data>
+							</AddData>
+							<Type>
+								<TypeName>BOOL</TypeName>
+							</Type>
+							<InitialValue>
+								<SimpleValue value="TRUE"/>
+							</InitialValue>
+						</Variable>
+					</InputVars>
+					<!--ローカルラベルの定義(VAR_OUTPUT)-->
+					<OutputVars retain="false">
+						<Variable name="fb1_vo" orderWithinParamSet="7">
+							<AddData>
+								<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+									<VariableComments>
+										<Comment number="6">
+											<CommentText>fb1_vo(VAR_OUTPUT)のコメント</CommentText>
+										</Comment>
+									</VariableComments>
+								</Data>
+							</AddData>
+							<Type>
+								<TypeName>BOOL</TypeName>
+							</Type>
+							<InitialValue>
+								<SimpleValue value="TRUE"/>
+							</InitialValue>
+						</Variable>
+					</OutputVars>
+					<!--ローカルラベルの定義(VAR_OUTPUT_RETAIN)-->
+					<OutputVars retain="true">
+						<Variable name="fb1_vor" orderWithinParamSet="6">
+							<Type>
+								<TypeName>BOOL</TypeName>
+							</Type>
+						</Variable>
+					</OutputVars>
+				</Parameters>
+				<!--ローカルラベルの定義(VAR)-->
+				<Vars constant="false" retain="false" accessSpecifier="private">
+					<Variable name="fb1_v">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>fb1_v(VAR)のコメント</CommentText>
+									</Comment>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="FALSE"/>
+						</InitialValue>
+					</Variable>
+				</Vars>
+				<!--ローカルラベルの定義(VAR_PUBLIC)-->
+				<Vars constant="false" retain="false" accessSpecifier="public">
+					<Variable name="fb1_vp">
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+					</Variable>
+				</Vars>
+				<!--ローカルラベルの定義(VAR_CONSTANT)-->
+				<Vars constant="true" retain="false" accessSpecifier="private">
+					<Variable name="fb1_vc">
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="FALSE"/>
+						</InitialValue>
+					</Variable>
+				</Vars>
+				<!--ローカルラベルの定義(VAR_RETAIN)-->
+				<Vars constant="false" retain="true" accessSpecifier="private">
+					<Variable name="fb1_vr">
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+					</Variable>
+				</Vars>
+				<!--ローカルラベルの定義(VAR_PUBLIC_RETAIN)-->
+				<Vars constant="false" retain="true" accessSpecifier="public">
+					<Variable name="fb1_vpr">
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+					</Variable>
+				</Vars>
+				<!--プログラム本体の定義-->
+				<MainBody>
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/BodyProperties" handleUnknown="implementation">
+							<!--1つ目のプログラム本体のプロパティ-->
+							<BodyProperties orderWithinBodyProperties="1" workSheetName="workSheetfb1" executeOrder="1"/>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/BodyProperties" handleUnknown="implementation">
+							<!--2つ目のプログラム本体のプロパティ-->
+							<BodyProperties orderWithinBodyProperties="2" workSheetName="workSheetfb2" executeOrder="2"/>
+						</Data>
+					</AddData>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義(1つ目のプログラム) -->
+						<ST>B10 := fb1_vio;</ST>
+					</BodyContent>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義(2つ目のプログラム) -->
+						<ST>B11 := fb1_vpr;</ST>
+					</BodyContent>
+				</MainBody>
+			</FunctionBlock>
+			<!--ファンクションブロック(ST)-->
+			<FunctionBlock name="FBPou2">
+				<AddData>
+					<!--ファンクションブロックのプロパティ-->
+					<Data name="http://www.mitsubishielectric.com/xml/PouProperties" handleUnknown="implementation">
+						<PouProperties title="タイトル FBPou2(ST)" version="ver.1.012" helpFilePath="ヘルプのパス情報FBPou3" supportVersion="1.010W"></PouProperties>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/FbPouFile" handleUnknown="implementation">
+						<FbPouFile name="FbFile2"></FbPouFile>
+					</Data>
+				</AddData>
+				<!--ローカルラベルの定義(VAR)-->
+				<Vars constant="false" retain="false" accessSpecifier="private">
+					<Variable name="fb2_v">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>fb2_v(VAR)のコメント</CommentText>
+									</Comment>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="TRUE"/>
+						</InitialValue>
+					</Variable>
+				</Vars>
+				<!--プログラム本体の定義-->
+				<MainBody>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義(1つ目のプログラム) -->
+						<ST>B5 := fb2_v;</ST>
+					</BodyContent>
+				</MainBody>
+			</FunctionBlock>
+			<!--ファンクション-->
+			<Function name="FunPou1">
+				<Documentation xsi:type="SimpleText">Fun1のコメント</Documentation>
+				<AddData>
+					<!--ファンクションのプロパティ-->
+					<Data name="http://www.mitsubishielectric.com/xml/PouProperties" handleUnknown="implementation">
+						<!--ファンクションのプロパティ内容
+						　　title:タイトル
+								version:バージョン
+								helpFilePath:ヘルプのパス情報
+								supportVersion:サポートバージョン
+						-->
+						<PouProperties title="タイトル FunPou1(FUN)" version="ver.1.014" helpFilePath="ヘルプのパス情報FunPou1(FUN)" supportVersion="1.012W"></PouProperties>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/FunPouProperties" handleUnknown="implementation">
+						<!--ファンクションのプロパティ内容
+						　　isEnEno:EN/ENOを使用する
+						-->
+						<FunPouProperties isEnEno="false"></FunPouProperties>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/FunPouFile" handleUnknown="implementation">
+						<!--FUNファイルへの登録先-->
+						<FunPouFile name="FunFile1"></FunPouFile>
+					</Data>
+				</AddData>
+				<!--戻り値-->
+				<ResultType>
+					<!--ビット型の戻り値-->
+					<TypeName>BOOL</TypeName>
+				</ResultType>
+				<Parameters>
+					<!--ローカルラベルの定義(VAR_INPUT)-->
+					<InputVars>
+						<Variable name="fun1_vi" orderWithinParamSet="2">
+							<AddData>
+								<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+									<VariableComments>
+										<Comment number="6">
+											<CommentText>fun1_vi(VAR_INPUT)のコメント</CommentText>
+										</Comment>
+									</VariableComments>
+								</Data>
+							</AddData>
+							<Type>
+								<TypeName>BOOL</TypeName>
+							</Type>
+						</Variable>
+					</InputVars>
+					<!--ローカルラベルの定義(VAR_OUTPUT)-->
+					<OutputVars retain="false">
+						<Variable name="fun1_vo" orderWithinParamSet="5">
+							<AddData>
+								<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+									<VariableComments>
+										<Comment number="6">
+											<CommentText>fun1_vo(VAR_OUTPUT)のコメント</CommentText>
+										</Comment>
+									</VariableComments>
+								</Data>
+							</AddData>
+							<Type>
+								<TypeName>BOOL</TypeName>
+							</Type>
+						</Variable>
+					</OutputVars>
+				</Parameters>
+				<!--ローカルラベルの定義(VAR)-->
+				<TempVars constant="false" retain="false">
+					<AddData/>
+					<Variable name="fun1_v">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>fun1_v(VAR)のコメント</CommentText>
+									</Comment>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+					</Variable>
+				</TempVars>
+				<!--ローカルラベルの定義(VAR_CONSTANT)-->
+				<TempVars constant="true" retain="false">
+					<Variable name="fun1_vc">
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="FALSE"/>
+						</InitialValue>
+					</Variable>
+				</TempVars>
+				<!--プログラム本体の定義-->
+				<MainBody>
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/BodyProperties" handleUnknown="implementation">
+							<BodyProperties orderWithinBodyProperties="1" workSheetName="workSheet1" executeOrder="1"/>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/BodyProperties" handleUnknown="implementation">
+							<BodyProperties orderWithinBodyProperties="2" workSheetName="workSheet2" executeOrder="3"/>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/BodyProperties" handleUnknown="implementation">
+							<BodyProperties orderWithinBodyProperties="3" workSheetName="workSheet3" executeOrder="2"/>
+						</Data>
+					</AddData>
+					<!-- プログラム本体の定義 -->
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>M10 := fun1_vi;</ST>
+					</BodyContent>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>M11 := fun1_vc;</ST>
+					</BodyContent>
+					<BodyContent xsi:type="ST">
+						<!-- STの定義 -->
+						<ST>M12 := fun1_v;</ST>
+					</BodyContent>
+				</MainBody>
+			</Function>
+			<!--構造体の定義-->
+			<DataTypeDecl name="Struct1">
+				<Documentation xsi:type="SimpleText">Struct1のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/DataTypeProperties" handleUnknown="implementation">
+						<DataTypeProperties title="タイトル Struct1" version="ver.1.002" helpFilePath="ヘルプのパス情報1" supportVersion="1.000W" reservedArea="4"/>
+					</Data>
+				</AddData>
+				<!--構造体メンバの定義-->
+				<UserDefinedTypeSpec xsi:type="StructTypeSpec">
+					<!--ビット型のメンバ-->
+					<Member name="member1_1">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>member1_1のコメント</CommentText>
+									</Comment>
+								</VariableComments>
+							</Data>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<!--行番号-->
+								<VariableLineNumber number="1"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="TRUE"/>
+						</InitialValue>
+					</Member>
+					<!--ワード[符号付き]型のメンバ-->
+					<Member name="member1_2">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>member1_2のコメント</CommentText>
+									</Comment>
+									<Bit index="0">
+										<Comment number="6">
+											<CommentText>member1_2.0のコメント</CommentText>
+										</Comment>
+									</Bit>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>INT</TypeName>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="12"/>
+						</InitialValue>
+					</Member>
+					<!--ビット型(1次元配列)のメンバ-->
+					<Member name="member1_3">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<!--ラベル自体のコメント-->
+										<CommentText>member1_3のコメント</CommentText>
+									</Comment>
+									<Array>
+										<!--配列要素のコメント-->
+										<Element index="0">
+											<Comment number="6">
+												<CommentText>member1_3[0]のコメント</CommentText>
+											</Comment>
+										</Element>
+									</Array>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<InstantlyDefinedType xsi:type="ArrayTypeSpec">
+								<BaseType>
+									<TypeName>BOOL</TypeName>
+								</BaseType>
+								<DimensionSpec dimensionNumber="1">
+									<IndexRange lower="0" upper="3" />
+								</DimensionSpec>
+							</InstantlyDefinedType>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="FALSE"/>
+						</InitialValue>
+						<Address/>
+					</Member>
+					<!--構造体のメンバ-->
+					<Member name="member1_4">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+											<CommentText>member1_4のコメント</CommentText>
+										</Comment>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>Struct2</TypeName>
+						</Type>
+					</Member>
+					<AddData/>
+				</UserDefinedTypeSpec>
+			</DataTypeDecl>
+			<!--構造体の定義-->
+			<DataTypeDecl name="Struct2">
+				<Documentation xsi:type="SimpleText">Struct2のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/DataTypeProperties" handleUnknown="implementation">
+						<DataTypeProperties title="タイトル Struct2" version="ver.1.002" helpFilePath="ヘルプのパス情報1" supportVersion="1.000W" reservedArea="4"/>
+					</Data>
+				</AddData>
+				<!--構造体メンバの定義-->
+				<UserDefinedTypeSpec xsi:type="StructTypeSpec">
+					<!--ビット型のメンバ-->
+					<Member name="member2_1">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>member2_1のコメント</CommentText>
+									</Comment>
+								</VariableComments>
+							</Data>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+								<!--行番号-->
+								<VariableLineNumber number="1"/>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>BOOL</TypeName>
+						</Type>
+					</Member>
+					<!--ワード[符号付き]型のメンバ-->
+					<Member name="member2_2">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<CommentText>member2_2のコメント</CommentText>
+									</Comment>
+									<Bit index="0">
+										<Comment number="6">
+											<CommentText>member2_2.0のコメント</CommentText>
+										</Comment>
+									</Bit>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<TypeName>INT</TypeName>
+						</Type>
+					</Member>
+					<!--ビット型(1次元配列)のメンバ-->
+					<Member name="member2_3">
+						<AddData>
+							<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+								<VariableComments>
+									<Comment number="6">
+										<!--ラベル自体のコメント-->
+										<CommentText>member2_3のコメント</CommentText>
+									</Comment>
+									<Array>
+										<!--配列要素のコメント-->
+										<Element index="0">
+											<Comment number="6">
+												<CommentText>member2_3[0]のコメント</CommentText>
+											</Comment>
+										</Element>
+									</Array>
+								</VariableComments>
+							</Data>
+						</AddData>
+						<Type>
+							<InstantlyDefinedType xsi:type="ArrayTypeSpec">
+								<BaseType>
+									<TypeName>BOOL</TypeName>
+								</BaseType>
+								<DimensionSpec dimensionNumber="1">
+									<IndexRange lower="0" upper="3" />
+								</DimensionSpec>
+							</InstantlyDefinedType>
+						</Type>
+						<InitialValue>
+							<SimpleValue value="FALSE"/>
+						</InitialValue>
+						<Address/>
+					</Member>
+				</UserDefinedTypeSpec>
+			</DataTypeDecl>
+		</GlobalNamespace>
+	</Types>
+	<Instances>
+		<Configuration name="config1">
+			<!--プログラムファイルの定義(一般/初期)
+					name:データ名
+					resourceTypeName:定義内容を特定するための名前(インポートでは読み出さない)
+			-->
+			<Resource name="Main" resourceTypeName="prgFile">
+				<Documentation xsi:type="SimpleText">プログラムファイルの定義(一般/初期)のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/ProgramFileProperties" handleUnknown="implementation">
+						<!--プログラムファイルのプロパティ
+								title:タイトル
+						-->
+						<ProgramFileProperties title="タイトル (一般/初期)" />
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/ResourceExecutionType" handleUnknown="implementation">
+						<!--プログラムファイルの実行タイプ-->
+						<ResourceExecutionType type="initial"/>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/ResourceFolders" handleUnknown="implementation">
+						<!--ユーザーフォルダの定義-->
+						<ResourceFolders>
+							<!--ユーザーフォルダーのプロパティ-->
+							<ResourceFolder name="userFolder1" >
+								<Documentation>userFolder1のコメント</Documentation><!--コメント-->
+							</ResourceFolder>
+							<ResourceFolder name="userFolder2" >
+								<Documentation>userFolder2のコメント</Documentation><!--コメント-->
+							</ResourceFolder>
+						</ResourceFolders>
+					</Data>
+				</AddData>
+				<!--プログラムの登録定義
+						name:データ名
+						typeName:プログラム種別名（インポートでは読み出さない、プログラム定義を使用する）
+						evaluationOrder:プログラムの実行順序
+				-->
+				<ProgramInstance name="Program1" typeName="pou" evaluationOrder="1">
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/PouResourceFolder" handleUnknown="implementation">
+							<!--プログラムを配置するユーザーフォルダ-->
+							<PouResourceFolder name="userFolder1"/>
+						</Data>
+					</AddData>
+				</ProgramInstance>
+			</Resource>
+			<!--プログラムファイルの定義(一般/スキャン)-->
+			<Resource name="MainScan" resourceTypeName="prgFile">
+				<Documentation xsi:type="SimpleText">プログラムファイルの定義(一般/スキャン)のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/ProgramFileProperties" handleUnknown="implementation">
+						<ProgramFileProperties title="タイトル (一般/スキャン)"/>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/ResourceExecutionType" handleUnknown="implementation">
+						<ResourceExecutionType type="scan"/>
+					</Data>
+				</AddData>
+				<ProgramInstance name="ProgramScan" typeName="pou" evaluationOrder="1"/>
+			</Resource>
+			<!--プログラムファイルの定義(一般/待機)-->
+			<Resource name="MainStandby" resourceTypeName="prgFile">
+				<Documentation xsi:type="SimpleText">プログラムファイルの定義(一般/待機)のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/ProgramFileProperties" handleUnknown="implementation">
+						<ProgramFileProperties title="タイトル (一般/待機)"/>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/ResourceExecutionType" handleUnknown="implementation">
+						<ResourceExecutionType type="standby"/>
+					</Data>
+				</AddData>
+				<ProgramInstance name="ProgramStandby" typeName="pou" evaluationOrder="1"/>
+			</Resource>
+			<!--プログラムファイルの定義(一般/定周期)-->
+			<Resource name="MainFixedScan" resourceTypeName="prgFile">
+				<Documentation xsi:type="SimpleText">プログラムファイルの定義(一般/定周期)のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/ProgramFileProperties" handleUnknown="implementation">
+						<ProgramFileProperties title="タイトル (一般/定周期)"/>
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/ResourceExecutionType" handleUnknown="implementation">
+						<ResourceExecutionType type="fixedScan"/>
+					</Data>
+				</AddData>
+				<ProgramInstance name="ProgramFixedScan" typeName="pou" evaluationOrder="1"/>
+			</Resource>
+			<!--プログラムファイルの定義(一般/イベント)-->
+			<Resource name="MainEvent" resourceTypeName="prgFile">
+				<Documentation xsi:type="SimpleText">プログラムファイルの定義(一般/イベント)のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/ProgramFileProperties" handleUnknown="implementation">
+						<ProgramFileProperties title="タイトル (一般/イベント)" />
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/ResourceExecutionType" handleUnknown="implementation">
+						<ResourceExecutionType type="event"/>
+					</Data>
+				</AddData>
+				<ProgramInstance name="ProgramEvent" typeName="pou" evaluationOrder="1"/>
+			</Resource>
+			<!--プログラムファイルの定義(一般/実行種別なし)-->
+			<Resource name="MainNoExecution" resourceTypeName="prgFile">
+				<Documentation xsi:type="SimpleText">プログラムファイルの定義(一般/実行種別なし)のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/ProgramFileProperties" handleUnknown="implementation">
+						<ProgramFileProperties title="タイトル (一般/実行種別なし)" />
+					</Data>
+					<Data name="http://www.mitsubishielectric.com/xml/ResourceExecutionType" handleUnknown="implementation">
+						<ResourceExecutionType type="noExecution"/>
+					</Data>
+				</AddData>
+				<ProgramInstance name="ProgramNoExecution" typeName="pou" evaluationOrder="1"/>
+			</Resource>
+			<!--グローバルラベルの定義(一般)-->
+			<GlobalVars constant="false" retain="false">
+				<Documentation xsi:type="SimpleText">グローバルラベル(一般)のコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/GlobalVarsProperties" handleUnknown="implementation">
+						<GlobalVarsProperties name="Global1" title="タイトル (一般)" version="ver.1.017" helpFilePath="ヘルプのパス情報16" supportVersion="1.015W"/>
+					</Data>
+				</AddData>
+				<Variable name="global_label1_1">
+					<!--ビット型の定義-->
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+							<!--コメント-->
+							<VariableComments>
+								<Comment number="6">
+									<!--ラベル自体のコメント-->
+									<CommentText>global_label1_1のコメント</CommentText>
+								</Comment>
+							</VariableComments>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableRemark" handleUnknown="implementation">
+							<!--備考-->
+							<VariableRemark>
+								<RemarkText>global_label1_1の備考</RemarkText>
+							</VariableRemark>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+							<!--行番号-->
+							<VariableLineNumber number="1"/>
+						</Data>
+					</AddData>
+					<Type>
+						<TypeName>BOOL</TypeName>
+					</Type>
+					<InitialValue>
+						<SimpleValue value="FALSE"/>
+					</InitialValue>
+					<Address address="M50"/>
+				</Variable>
+				<Variable name="global_label1_4">
+					<!--構造体型の定義-->
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableStructDeviceAssignment" handleUnknown="implementation">
+							<VariableStructDeviceAssignment>
+								<!--構造体のローカルラベルの情報
+										name:ラベル名
+										address:割付け(デバイス/ラベル)
+								-->
+								<Member name="member1_1" address="B0"/>
+								<Member name="member1_2" address="W0"/>
+								<Member name="member1_3" address="B10"/>
+								<Member name="member1_4">
+									<!--構造体のメンバ設定-->
+									<Struct>
+										<Member name="member2_1" address="B100"/>
+										<Member name="member2_2" address="W100"/>
+										<Member name="member2_3" address="B120"/>
+									</Struct>
+								</Member>
+							</VariableStructDeviceAssignment>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+							<VariableComments>
+								<Comment number="6">
+									<!--ラベル自体のコメント-->
+									<CommentText>global_label1_4のコメント</CommentText>
+								</Comment>
+							</VariableComments>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+							<VariableLineNumber number="4"/>
+						</Data>
+					</AddData>
+					<Type>
+						<TypeName>Struct1</TypeName>
+					</Type>
+				</Variable>
+				<Variable name="global_label1_5">
+					<!--ビット型の定義-->
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+							<VariableLineNumber number="5"/>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableSystemLabel" handleUnknown="implementation">
+							<!--システムラベルの定義-->
+							<VariableSystemLabel relation="public" name="システムラベルglobal_label1_5" attribute="share"/>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableExternalDeviceAccess" handleUnknown="implementation">
+							<!--外部機器からのアクセス-->
+							<VariableExternalDeviceAccess isAccess="true"/>
+						</Data>
+					</AddData>
+					<Type>
+						<TypeName>WORD</TypeName>
+					</Type>
+				</Variable>
+			</GlobalVars>
+			<!--グローバルラベルの定義(一般)(CONSTANT)-->
+			<GlobalVars constant="true" retain="false">
+				<Documentation xsi:type="SimpleText">MAINのCONSTANTグローバルラベルのコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/GlobalVarsProperties" handleUnknown="implementation">
+						<GlobalVarsProperties name="Global1" title="タイトル (一般)(CONSTANT)" version="ver.1.020" helpFilePath="ヘルプのパス情報19" supportVersion="1.018W"/>
+					</Data>
+				</AddData>
+				<Variable  name="global_label1_2">
+					<!--ダブルワード(符号なし)型の定義-->
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+							<VariableComments>
+								<Comment number="6">
+									<!--ラベル自体のコメント-->
+									<CommentText>global_label1_2のコメント</CommentText>
+								</Comment>
+							</VariableComments>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+							<VariableLineNumber number="2"/>
+						</Data>
+					</AddData>
+					<Type>
+						<TypeName>DWORD</TypeName>
+					</Type>
+					<InitialValue>
+						<SimpleValue value="12"/>
+					</InitialValue>
+				</Variable>
+			</GlobalVars>
+			<!--グローバルラベルの定義(一般)(RETAIN)-->
+			<GlobalVars constant="false" retain="true" >
+				<Documentation xsi:type="SimpleText">MAINのRETAINグローバルラベルのコメント</Documentation>
+				<AddData>
+					<Data name="http://www.mitsubishielectric.com/xml/GlobalVarsProperties" handleUnknown="implementation">
+						<GlobalVarsProperties name="Global1" title="タイトル (一般)(RETAIN)" version="ver.1.021" helpFilePath="ヘルプのパス情報20" supportVersion="1.019W"/>
+					</Data>
+				</AddData>
+				<Variable name="global_label1_3">
+					<!--ダブルワード(符号付き)型の定義-->
+					<AddData>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableComments" handleUnknown="implementation">
+							<VariableComments>
+								<Comment number="6">
+									<!--ラベル自体のコメント-->
+									<CommentText>global_label1_3のコメント</CommentText>
+								</Comment>
+							</VariableComments>
+						</Data>
+						<Data name="http://www.mitsubishielectric.com/xml/VariableLineNumber" handleUnknown="implementation">
+							<VariableLineNumber number="3"/>
+						</Data>
+					</AddData>
+					<Type>
+						<TypeName>BOOL</TypeName>
+					</Type>
+					<InitialValue>
+						<SimpleValue value="TRUE"/>
+					</InitialValue>
+					<Address address="L0"/>
+				</Variable>
+			</GlobalVars>
+		</Configuration>
+	</Instances>
+</Project>

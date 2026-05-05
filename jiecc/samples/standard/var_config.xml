@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<FunctionBlock name="fb">
+	<Vars accessSpecifier="private">
+		<Variable name="n">
+			<Type><TypeName>int</TypeName></Type>
+			<Address location="I" notYetFixed="true" />
+		</Variable>
+	</Vars>
+</FunctionBlock>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="v1">
+			<Type><TypeName>fb</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v2">
+			<Type><TypeName>fb</TypeName></Type>
+		</Variable>
+	</Vars>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+<Configuration name="cfg">
+<Resource name="rsc" resourceTypeName="plc">
+</Resource>
+<ConfigVars>
+	<ConfigVariable instancePathAndName="rsc.main_program.v1.n">
+		<Type><TypeName>int</TypeName></Type>
+		<InitialValue>
+			<SimpleValue value="2" />
+		</InitialValue>
+		<Address location="Q" size="W" address="1" />
+	</ConfigVariable>
+	<ConfigVariable instancePathAndName="rsc.main_program.v2.n">
+		<Type><TypeName>int</TypeName></Type>
+		<InitialValue>
+			<SimpleValue value="3" />
+		</InitialValue>
+		<Address location="Q" size="W" address="2" />
+	</ConfigVariable>
+</ConfigVars>
+</Configuration>
+</Instances>
+</Project>

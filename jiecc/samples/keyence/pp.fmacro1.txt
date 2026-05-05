@@ -1,0 +1,12 @@
+{#define MAX2(x, y, o) if (x) > (y) then o := x; else o := y; end_if;}
+
+program Main
+var
+    iv: int;
+    rv: lreal;
+end_var
+{st}
+MAX2(1 + 2, 3 - 4, iv);
+MAX2(1.0 + 2.0, 3.0 - 4.0, rv);
+{end}
+end_program

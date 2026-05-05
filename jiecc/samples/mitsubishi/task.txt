@@ -1,0 +1,28 @@
+program Main
+end
+
+program SubProgram
+end
+
+configuration MainConfiguration
+    resource MainResource on plc
+        var_global
+{#if not (_MITSUBISHI)}
+            sensorv at %IX0.0: bool;
+{#else}
+            sensorv at %X0.0: bool;
+{#endif}
+        end_var
+
+        task tsk_fast(interval := t#1ms, priority := 2);
+{#if not (_CODESYS)}
+        task tsk_slow(interval := t#100ms, priority := 3);
+        task tsk_sensor_int(single := sensorv, priority := 1);
+{#endif}
+
+        program main_program with tsk_fast: Main();
+{#if not (_CODESYS)}
+        program sub_program: SubProgram() (*{evaluation-order: 2}*);
+{#endif}
+    end_resource
+end_configuration

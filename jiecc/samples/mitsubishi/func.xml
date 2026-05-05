@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<Function name="no_return_func">
+	<Parameters>
+	<InputVars>
+		<Variable name="addend" orderWithinParamSet="1">
+			<Type><TypeName>dint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="1" />
+			</InitialValue>
+		</Variable>
+	</InputVars>
+	</Parameters>
+	<TempVars>
+		<Variable name="g_counter">
+			<Type><TypeName>dint</TypeName></Type>
+		</Variable>
+	</TempVars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>g_counter := g_counter + addend;
+</ST></BodyContent>
+	</MainBody>
+</Function>
+<Function name="increment_func">
+	<ResultType><TypeName>int</TypeName></ResultType>
+	<Parameters>
+	<InputVars>
+		<Variable name="in" orderWithinParamSet="1">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	</Parameters>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>increment_func := in + 1;
+</ST></BodyContent>
+	</MainBody>
+</Function>
+<Program name="Main">
+	<TempVars>
+		<Variable name="intv">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</TempVars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>no_return_func(1);
+
+intv := increment_func(2); // intv = 3; 2 + 1
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

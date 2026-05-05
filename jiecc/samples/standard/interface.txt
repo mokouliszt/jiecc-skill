@@ -1,0 +1,56 @@
+interface x
+    method f: int
+        var_input i: int; end_var
+    end_method
+end_interface
+
+interface y
+    method g: int
+        var_input i1: int; end_var
+        var_input i2: int; end_var
+    end_method
+end_interface
+
+// if CODESYS
+//   FUNCTION_BLOCK z ABSTRACT IMPLEMENTS x y
+//     -> FUNCTION_BLOCK ABSTRACT z IMPLEMENTS x, y
+class abstract z implements x, y
+{#if _CODESYS}
+    method public abstract f: int
+        var_input i: int; end_var
+    end_method
+
+    method public abstract g: int
+        var_input i1: int; end_var
+        var_input i2: int; end_var
+    end_method
+{#endif}
+    method public h: int
+        var_input i1: int; end_var
+        var_input i2: int; end_var
+        (*{st}*)h := this^.g(this^.f(i1), this^.f(i2));(*{end}*)
+    end_method
+end_class
+
+class a extends z
+    method public override f: int
+        var_input i: int; end_var
+        (*{st}*)f := i + 1;(*{end}*)
+    end_method
+
+    method public override g: int
+        var_input i1: int; end_var
+        var_input i2: int; end_var
+        (*{st}*)g := i1 + i2;(*{end}*)
+    end_method
+end_class
+
+program Main
+    var
+        av: a;
+        n: int;
+    end_var
+// {st}
+n := av.h(2, 3); // n = 7; g(f(2), f(3))=g(3, 4)
+// {end}
+end_program

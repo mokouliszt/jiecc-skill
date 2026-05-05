@@ -1,0 +1,36 @@
+{#define R0 0}
+{#define R1 5}
+{#define RANGE R0..R1}
+{#define T dint}
+
+function my_sum: T
+{#if not (_MITSUBISHI)}
+var_in_out
+{#else}
+var_input
+{#endif}
+	in: array[RANGE] of T;
+end_var
+var_temp
+	element: T;
+	index: dint;
+end_var
+//{st}
+my_sum := T#0;
+for index := R0 to R1 by 1 do
+	element := in[index];
+	my_sum := my_sum + element;
+end_for;
+//{end}
+end_function
+
+program Main
+var
+	sum1, sum2: T;
+	a_1, a_2: array[RANGE] of T;
+end_var
+//{st}
+sum1 := my_sum(a_1);
+sum2 := my_sum(a_2);
+//{end}
+end_program

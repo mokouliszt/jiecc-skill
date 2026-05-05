@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<DataTypeDecl name="e_t">
+<UserDefinedTypeSpec xsi:type="EnumTypeSpec">
+	<Enumerator name="e0" />
+	<Enumerator name="e1" />
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<DataTypeDecl name="s_t">
+<UserDefinedTypeSpec xsi:type="StructTypeSpec">
+	<Member name="m_0">
+		<Type><TypeName>int</TypeName></Type>
+	</Member>
+	<Member name="m_1">
+		<Type><TypeName>bool</TypeName></Type>
+	</Member>
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<Function name="func">
+	<ResultType><TypeName>bool</TypeName></ResultType>
+	<Parameters>
+	<InputVars>
+		<Variable name="i_1" orderWithinParamSet="1">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InputVars>
+		<Variable name="i_2" orderWithinParamSet="2">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<OutputVars>
+		<Variable name="o" orderWithinParamSet="3">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</OutputVars>
+	</Parameters>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>o := i_1 + i_2;
+func := i_1 = i_2;
+</ST></BodyContent>
+	</MainBody>
+</Function>
+<Interface name="i">
+	<Method name="m">
+	</Method>
+</Interface>
+<Class name="c">
+	<Implements><TypeName>i</TypeName></Implements>
+	<Method name="m" accessSpecifier="public">
+	</Method>
+</Class>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="ev">
+			<Type><TypeName>e_t</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="sv">
+			<Type><TypeName>s_t</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="iv">
+			<Type><TypeName>i</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="cv">
+			<Type><TypeName>c</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="rv">
+			<Type><InstantlyDefinedType xsi:type="ReferenceTypeSpec"><ReferenceTo><TypeName>c</TypeName></ReferenceTo></InstantlyDefinedType></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="intv">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="num">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="lrealv">
+			<Type><TypeName>lreal</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="boolv">
+			<Type><TypeName>bool</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="wordv">
+			<Type><TypeName>word</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="ary">
+			<Type><InstantlyDefinedType xsi:type="ArrayTypeSpec"><BaseType><TypeName>int</TypeName></BaseType><DimensionSpec dimensionNumber="1"><IndexRange lower="0" upper="9" /></DimensionSpec></InstantlyDefinedType></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>// Operators
+
+
+
+
+ev := e_t.e0;
+
+num := 2 + 3;
+num := 2 - 3;
+num := 2 * 3;
+num := 2 / 3;
+num := 3 mod 2;
+
+
+
+wordv := wordv and word#16#1010;
+
+
+
+wordv := wordv or word#16#1010;
+wordv := wordv xor word#16#1010;
+boolv := boolv and true;
+
+
+
+boolv := boolv or true;
+boolv := boolv xor false;
+boolv := 2 &lt; 3;
+boolv := 2 &lt;= 3;
+boolv := 2 = 3;
+boolv := 2 &lt;&gt; 3;
+boolv := 2 &gt;= 3;
+boolv := 2 &gt; 3;
+num := sv . m_0;
+
+boolv := wordv . %X2;
+
+
+boolv := wordv . 3;
+
+num := intv;
+
+
+
+
+num := +intv;
+
+num := -intv;
+wordv := not wordv;
+boolv := not boolv;
+
+
+
+
+//rv REF= cv;
+cv := rv;
+
+num := (intv);
+num := ary[intv];
+
+
+
+boolv := func(intv, 1, o=&gt;num);
+
+boolv := func(i_1:=intv, i_2:=1, o=&gt;num);
+
+// if statement.
+
+if intv = 0 then
+	num := num + 1;
+end_if;
+
+if (intv mod 2) = 0 then
+	num := num + 2;
+else
+	num := num + 1;
+end_if;
+
+if intv &gt; 0 then
+	num := +1;
+elsif intv &lt; 0 then
+	num := -1;
+else
+	num := 0;
+end_if;
+
+// case statement.
+
+case intv of
+2:
+	num := 4;
+3:
+	num := 9;
+4..7:
+	num := intv * intv;
+else
+	num := 0;
+end_case;
+
+// for statement.
+
+for intv := 1 to 4 by 1 do
+	num := num + intv;
+	// exit statement.
+	if num &lt; -1 then
+		exit;
+	end_if;
+
+	// continue statement.
+	if num = 1 then
+		continue;
+	end_if;
+
+end_for;
+
+// while statement.
+
+while intv &lt;= 10 do
+	num := num + intv;
+	intv := intv + 1;
+end_while;
+
+// repeat statement.
+
+repeat
+	num := num + intv;
+	intv := intv + 1;
+until intv = 15 end_repeat;
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

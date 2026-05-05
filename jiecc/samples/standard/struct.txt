@@ -1,0 +1,23 @@
+type
+	s_t: struct
+		m_0: int;
+		m_1: array[0..3] of bool;
+	end_struct;
+end_type
+
+program Main
+	var
+{#if not (_MITSUBISHI)}
+		sv: s_t := (m_0 := 2, m_1 := [false, false, true, false]);
+		svs: array[0..1] of s_t := [2((m_0 := 0, m_1 := [4(true)]))];
+{#else}
+		sv: s_t;
+		svs: array[0..1] of s_t;
+{#endif}
+	end_var
+//{st}
+sv.m_0 := 13;
+sv.m_1[2] := true;
+svs[0] := sv;
+//{end}
+end_program

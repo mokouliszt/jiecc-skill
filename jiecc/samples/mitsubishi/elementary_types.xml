@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="v_01">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="1" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_02">
+			<Type><TypeName>dint</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="2" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_08">
+			<Type><TypeName>real</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="0.8" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_09">
+			<Type><TypeName>lreal</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="0.9" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_16">
+			<Type><TypeName>time</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="TIME#16ms" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_20">
+			<Type><TypeName>bool</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="TRUE" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_25">
+			<Type><TypeName>word</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="9472" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_26">
+			<Type><TypeName>dword</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="637534208" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_40">
+			<Type><TypeName>STRING</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="'No.40'" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="v_41">
+			<Type><TypeName>WSTRING</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="&quot;No.41&quot;" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST></ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

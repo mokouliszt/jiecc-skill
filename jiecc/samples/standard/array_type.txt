@@ -1,0 +1,10 @@
+type
+    // bool_array16_t: array[0..15] of bool := [16(true)]; // IEC 61131-10 1.0 does not support initial values for directly derived array type declarations. 
+    bool_array16_t: array[0..15] of bool;
+end_type
+
+program Main
+    var
+        v: bool_array16_t;
+    end_var
+end_program

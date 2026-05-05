@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smcext="https://www.ia.omron.com/Smc" xsi:schemaLocation="https://www.ia.omron.com/Smc%20IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" schemaVersion="1">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+<AddDataInfo><Info name="https://www.ia.omron.com/Smc IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" vendor="https://www.ia.omron.com/Smc" /></AddDataInfo>
+</ContentHeader>
+<Types><GlobalNamespace>
+<DataTypeDecl name="e_t">
+<UserDefinedTypeSpec xsi:type="EnumTypeSpec">
+	<Enumerator name="e0" />
+	<Enumerator name="e1" />
+	<Enumerator name="e2" />
+	<InitialValue>e0</InitialValue>
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<FunctionBlock name="fb">
+	<Vars accessSpecifier="private">
+		<Variable name="ev">
+			<Type><TypeName>e_t</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="e0" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>
+ev := e_t#e0;
+
+
+
+</ST></BodyContent>
+	</MainBody>
+</FunctionBlock>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<Program name="Main">
+</Program>
+<Program name="SubProgram">
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+<Configuration name="MainConfiguration">
+<Resource name="MainResource" resourceTypeName="plc">
+<GlobalVars>
+	<Variable name="sensorv">
+		<Type><TypeName>bool</TypeName></Type>
+		<Address location="I" size="X" address="0.0" />
+	</Variable>
+</GlobalVars>
+<Task xsi:type="StandardTask" name="tsk_fast" interval="time#1ms" priority="2" />
+<Task xsi:type="StandardTask" name="tsk_slow" interval="time#100ms" priority="3" />
+<Task xsi:type="StandardTask" name="tsk_sensor_int" single="sensorv" priority="1" />
+<ProgramInstance name="main_program" typeName="Main" associatedTaskName="tsk_fast">
+</ProgramInstance>
+<ProgramInstance name="sub_program" typeName="SubProgram" evaluationOrder="2">
+</ProgramInstance>
+</Resource>
+</Configuration>
+</Instances>
+</Project>

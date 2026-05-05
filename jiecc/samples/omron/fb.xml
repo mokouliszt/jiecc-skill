@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smcext="https://www.ia.omron.com/Smc" xsi:schemaLocation="https://www.ia.omron.com/Smc%20IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" schemaVersion="1">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+<AddDataInfo><Info name="https://www.ia.omron.com/Smc IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" vendor="https://www.ia.omron.com/Smc" /></AddDataInfo>
+</ContentHeader>
+<Types><GlobalNamespace>
+<FunctionBlock name="myfb">
+	<Parameters>
+	<InputVars>
+		<Variable name="i_1" orderWithinParamSet="1">
+			<Type><TypeName>bool</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InputVars>
+		<Variable name="i_2" orderWithinParamSet="2">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InoutVars>
+		<Variable name="pv" orderWithinParamSet="3">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InoutVars>
+	<OutputVars>
+		<Variable name="ov" orderWithinParamSet="4">
+			<Type><TypeName>bool</TypeName></Type>
+		</Variable>
+	</OutputVars>
+	</Parameters>
+	<Vars accessSpecifier="private">
+		<Variable name="vv">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="0" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>vv := vv + 1;
+ov := i_1 and (i_2 = 0) and (pv &gt; 0) and (vv &lt; 9);
+</ST></BodyContent>
+	</MainBody>
+</FunctionBlock>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="instance">
+			<Type><TypeName>myfb</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="intv">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="1" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="boolv">
+			<Type><TypeName>bool</TypeName></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>instance(i_1 := true, i_2 := 0, pv := intv, ov =&gt; boolv);
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

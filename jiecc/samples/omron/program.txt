@@ -1,0 +1,16 @@
+program Main
+	var
+		boolv: bool;
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+		atv at %QW1: int;
+{#elif _OMRON}
+		atv at %W1.0: int;
+{#elif _KEYENCE or _MITSUBISHI}
+		// The Keyence and Mitsubishi PLC does not allow the use of the AT attribute with static variables.
+		atv: int;
+{#endif}
+	end_var
+//{st}
+atv := 2;
+//{end}
+end_program

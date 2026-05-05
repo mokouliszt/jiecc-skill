@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<DataTypeDecl name="int1_t">
+<UserDefinedTypeSpec xsi:type="DirectlyDerivedTypeSpec"><BaseType><TypeName>int</TypeName></BaseType><InitialValue>
+	<SimpleValue value="1" />
+</InitialValue>
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<DataTypeDecl name="str1024_t">
+<UserDefinedTypeSpec xsi:type="DirectlyDerivedTypeSpec"><BaseType><TypeName>string[1024]</TypeName></BaseType><InitialValue>
+	<SimpleValue value="''" />
+</InitialValue>
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<DataTypeDecl name="t">
+<UserDefinedTypeSpec xsi:type="DirectlyDerivedTypeSpec"><BaseType><TypeName>int1_t</TypeName></BaseType></UserDefinedTypeSpec>
+</DataTypeDecl>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="int1v">
+			<Type><TypeName>t</TypeName></Type>
+		</Variable>
+	</Vars>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

@@ -1,0 +1,29 @@
+{#if not (_CODESYS)}
+type
+    r1_t: ref_to int;
+    r2_t: ref_to int;
+end_type
+{#endif}
+
+program Main
+var
+    v1: int := 2;
+    v2: int;
+    //
+    r1: ref_to int;
+{#if not (_CODESYS)}
+    r2: ref_to int := null;
+{#else}
+    r2: ref_to int;
+{#endif}
+end_var
+//{st}
+{#if not (_CODESYS)}
+r2 := ref(v2);
+r2^ := v1;
+{#else}
+//r2 ref= v2;
+r2 := v1;
+{#endif}
+//{end}
+end_program

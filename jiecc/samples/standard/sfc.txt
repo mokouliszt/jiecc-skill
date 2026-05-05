@@ -1,0 +1,55 @@
+program Main
+var
+    c: int := 0;
+end_var
+
+{#if not (_CODESYS)}
+{sfc}
+<SfcObject xsi:type="Step" name="s" initialStep="true">
+    <ConnectionPointIn>
+        <Connection refConnectionPointOutId="3"/>
+    </ConnectionPointIn>
+    <ConnectionPointOut connectionPointOutId="1"/>
+    <ConnectionPointOutAction connectionPointOutId="2"/>
+</SfcObject>
+<CommonObject xsi:type="ActionBlocks">
+    <ConnectionPointIn>
+        <Connection refConnectionPointOutId="2"/>
+    </ConnectionPointIn>
+    <ActionBlock>
+        <ActionQualifier qualifier="N"/>
+        <ReferenceName>a</ReferenceName>
+    </ActionBlock>
+</CommonObject>
+<SfcObject xsi:type="Transition">
+    <ConnectionPointIn>
+        <Connection refConnectionPointOutId="1"/>
+    </ConnectionPointIn>
+    <ConnectionPointOut connectionPointOutId="3"/>
+    <Condition>
+        <Reference name="t"/>
+    </Condition>
+</SfcObject>
+{end}
+{#endif}
+
+transition t:
+// {st}
+t := true;
+// {end}
+end_transition
+
+action a:
+// {st}
+// final scan. a.A = true.
+if not a.Q then
+    c := 0;
+    RETURN;
+end_if;
+
+// normal scan.
+c := c + 1;
+// {end}
+end_action
+
+end_program

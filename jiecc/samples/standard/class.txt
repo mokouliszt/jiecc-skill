@@ -1,0 +1,25 @@
+class Base
+    var protected m: int := 1; end_var
+
+    method public f: int
+        var_input i: int; end_var
+        (*{st}*)f := this.m + i;(*{end}*)
+    end_method
+end_class
+
+class Derived extends Base
+    method public override f: int
+        var_input i: int; end_var
+        (*{st}*)f := this.m * super.f(i);(*{end}*)
+    end_method
+end_class
+
+program Main
+var
+    x: Derived := (m := 3);
+    n: int;
+end_var
+// {st}
+n := x.f(4);
+// {end}
+end_program

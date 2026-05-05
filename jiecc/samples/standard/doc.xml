@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<DataTypeDecl name="s_t">
+<Documentation xsi:type="SimpleText">s_t comment</Documentation>
+<UserDefinedTypeSpec xsi:type="StructTypeSpec">
+	<Member name="m0">
+		<Documentation xsi:type="SimpleText">m0 comment</Documentation>
+		<Type><TypeName>dint</TypeName></Type>
+	</Member>
+	<Member name="m1">
+		<Documentation xsi:type="SimpleText">m1 comment</Documentation>
+		<Type><TypeName>bool</TypeName></Type>
+	</Member>
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<DataTypeDecl name="e_t">
+<Documentation xsi:type="SimpleText">e_t comment</Documentation>
+<UserDefinedTypeSpec xsi:type="EnumTypeSpec">
+	<Enumerator name="e0">
+		<Documentation xsi:type="SimpleText">e0 comment</Documentation>
+	</Enumerator>
+	<Enumerator name="e1">
+		<Documentation xsi:type="SimpleText">e1 comment</Documentation>
+	</Enumerator>
+</UserDefinedTypeSpec>
+</DataTypeDecl>
+<Function name="func">
+	<Documentation xsi:type="SimpleText">fun comment</Documentation>
+	<ResultType><TypeName>bool</TypeName></ResultType>
+	<Parameters>
+	<InputVars>
+		<Variable name="i_1" orderWithinParamSet="1">
+			<Documentation xsi:type="SimpleText">i_1 comment</Documentation>
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InputVars>
+		<Variable name="i_2" orderWithinParamSet="2">
+			<Documentation xsi:type="SimpleText">i_2 comment</Documentation>
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	</Parameters>
+</Function>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

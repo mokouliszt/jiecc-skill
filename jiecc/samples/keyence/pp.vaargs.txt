@@ -1,0 +1,21 @@
+{#define String_concat(...) _String_concat_n(__VA_ARGC__, __VA_ARGS__)}
+	{#define String_concat_1(s1) s1}
+	{#define String_concat_2(s1, s2) concat(s1, s2)}
+	{#define String_concat_3(s1, s2, s3) concat(String_concat_2(s1, s2), s3)}
+	{#define String_concat_4(s1, s2, s3, s4) concat(String_concat_3(s1, s2, s3), s4)}
+	{#define String_concat_5(s1, s2, s3, s4, s5) concat(String_concat_4(s1, s2, s3, s4), s5)}
+	{#define String_concat_6(s1, s2, s3, s4, s5, s6) concat(String_concat_5(s1, s2, s3, s4, s5), s6)}
+	{#define String_concat_7(s1, s2, s3, s4, s5, s6, s7) concat(String_concat_6(s1, s2, s3, s4, s5, s6), s7)}
+	{#define String_concat_8(s1, s2, s3, s4, s5, s6, s7, s8) concat(String_concat_7(s1, s2, s3, s4, s5, s6, s7), s8)}
+	{#define _String_concat_n(n, ...) String_concat_@@n(__VA_ARGS__)}
+{#define LOG(kind, lineno, ...) concat(kind, ':', lineno, ':', __VA_ARGS__)}
+
+program Main
+var
+    msg1, msg2: string[255];
+end_var
+{st}
+msg1 := String_concat('error', {## __LINE__}, 'Divided by zero.'); // concat(concat('error', '18'), 'Divided by zero.');
+msg2 := String_concat('warning', {## __LINE__}, 'Declaration', '&Redefine'); // concat(concat(concat('warning', '19'), 'Declaration'), '&Redefine');
+{end}
+end_program

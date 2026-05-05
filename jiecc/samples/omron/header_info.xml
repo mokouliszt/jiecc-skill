@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smcext="https://www.ia.omron.com/Smc" xsi:schemaLocation="https://www.ia.omron.com/Smc%20IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" schemaVersion="1">
+<FileHeader companyName="Jiecc Corp." companyURL="https://www.graviness.com/iec_61131-3/jiecc.html" productName="Jiecc" productVersion="0.3.14" productRelease="statble" />
+<ContentHeader name="Header info. sample" version="1.0" creationDateTime="2023-09-17T00:00:00+09:00" modificationDateTime="2026-02-15T00:00:00+09:00" language="ja-JP">
+<AddDataInfo><Info name="https://www.ia.omron.com/Smc IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" vendor="https://www.ia.omron.com/Smc" /></AddDataInfo>
+</ContentHeader>
+<Types><GlobalNamespace>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

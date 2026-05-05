@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:smcext="https://www.ia.omron.com/Smc" xsi:schemaLocation="https://www.ia.omron.com/Smc%20IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" schemaVersion="1">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+<AddDataInfo><Info name="https://www.ia.omron.com/Smc IEC61131_10_Ed1_0_SmcExt1_0_Spc1_0.xsd" vendor="https://www.ia.omron.com/Smc" /></AddDataInfo>
+</ContentHeader>
+<Types><GlobalNamespace>
+<Program name="Main">
+	<ExternalVars>
+		<Variable name="g_intv">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</ExternalVars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>g_intv := 2;
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+<Configuration name="cfg">
+<Resource name="rsc" resourceTypeName="plc">
+<GlobalVars>
+	<Variable name="g_boolv">
+		<Type><TypeName>bool</TypeName></Type>
+		<Address address="%W0.0" />
+	</Variable>
+</GlobalVars>
+<GlobalVars>
+	<Variable name="g_intv">
+		<Type><TypeName>int</TypeName></Type>
+		<InitialValue>
+			<SimpleValue value="3" />
+		</InitialValue>
+	</Variable>
+</GlobalVars>
+<GlobalVars retain="true">
+	<Variable name="g_timev">
+		<Type><TypeName>time</TypeName></Type>
+		<InitialValue>
+			<SimpleValue value="time#13ms" />
+		</InitialValue>
+	</Variable>
+</GlobalVars>
+</Resource>
+</Configuration>
+</Instances>
+</Project>

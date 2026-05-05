@@ -1,0 +1,18 @@
+{#if _STD}
+{#define STRING_SIZE 256}
+{#else}
+{#define STRING_SIZE 100}
+{#endif}
+
+program Main
+var
+    msg: string[STRING_SIZE];
+end_var
+//{st}
+{#if _STD}
+msg := 'message for standard target.';
+{#else}
+msg := 'message for specific target.';
+{#endif}
+//{end}
+end_program

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<Function name="add_int">
+	<ResultType><TypeName>int</TypeName></ResultType>
+	<Parameters>
+	<InputVars>
+		<Variable name="in1" orderWithinParamSet="2">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InputVars>
+		<Variable name="in2" orderWithinParamSet="3">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	</Parameters>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>	add_int := in1 + in2;	</ST></BodyContent>
+		<BodyContent xsi:type="LD">
+<Rung evaluationOrder="1">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="END">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung>
+<Rung evaluationOrder="2">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="ENDH">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung></BodyContent>
+	</MainBody>
+</Function>
+<Function name="add_lreal">
+	<ResultType><TypeName>lreal</TypeName></ResultType>
+	<Parameters>
+	<InputVars>
+		<Variable name="in1" orderWithinParamSet="2">
+			<Type><TypeName>lreal</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InputVars>
+		<Variable name="in2" orderWithinParamSet="3">
+			<Type><TypeName>lreal</TypeName></Type>
+		</Variable>
+	</InputVars>
+	</Parameters>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>	add_lreal := in1 + in2;	</ST></BodyContent>
+		<BodyContent xsi:type="LD">
+<Rung evaluationOrder="1">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="END">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung>
+<Rung evaluationOrder="2">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="ENDH">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung></BodyContent>
+	</MainBody>
+</Function>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="iv">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="rv">
+			<Type><TypeName>lreal</TypeName></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>iv := add_int(2, 3);
+rv := add_lreal(5.0, 7.0);
+</ST></BodyContent>
+		<BodyContent xsi:type="LD">
+<Rung evaluationOrder="1">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="END">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung>
+<Rung evaluationOrder="2">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="ENDH">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

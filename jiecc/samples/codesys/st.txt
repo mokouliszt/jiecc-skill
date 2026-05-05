@@ -1,0 +1,187 @@
+{#if _KEYENCE}
+	{#define word uint}
+{#endif}
+{#if _MITSUBISHI}
+	{#define uint word}
+{#endif}
+
+type
+{#if not (_KEYENCE or _MITSUBISHI)}
+	e_t: (e0, e1);
+{#endif}
+	s_t: struct
+		m_0: int;
+		m_1: bool;
+	end_struct;
+end_type
+
+function func: bool
+var_input i_1: int; i_2: int;end_var
+var_output o: int; end_var
+(*{st}*)
+o := i_1 + i_2;
+func := i_1 = i_2;
+(*{end}*)
+end_function
+
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+interface i
+	method m end_method
+end_interface
+{#endif}
+
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+class c implements i
+	method public m end_method
+end_class
+{#endif}
+
+program Main
+var
+{#if not (_KEYENCE or _MITSUBISHI)}
+	ev: e_t;
+{#endif}
+	sv: s_t;
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+	iv: i;
+	cv: c;
+	rv: ref_to c;
+{#endif}
+	intv: int;
+	num: int;
+	lrealv: lreal;
+	boolv: bool;
+	wordv: word;
+	ary: array[0..9] of int;
+end_var
+//{st}
+// Operators
+
+{#if not (_KEYENCE or _MITSUBISHI or _CODESYS)}
+ev := e_t#e0;
+{#elif _CODESYS}
+ev := e_t.e0;
+{#endif}
+num := 2 + 3;
+num := 2 - 3;
+num := 2 * 3;
+num := 2 / 3;
+num := 3 mod 2;
+{#if not (_CODESYS)}
+lrealv := 2.0 ** 3.0;
+{#endif}
+wordv := wordv and word#16#1010;
+{#if not (_CODESYS)}
+wordv := wordv & word#16#1010;
+{#endif}
+wordv := wordv or word#16#1010;
+wordv := wordv xor word#16#1010;
+boolv := boolv and true;
+{#if not (_CODESYS)}
+boolv := boolv & false;
+{#endif}
+boolv := boolv or true;
+boolv := boolv xor false;
+boolv := 2 < 3;
+boolv := 2 <= 3;
+boolv := 2 = 3;
+boolv := 2 <> 3;
+boolv := 2 >= 3;
+boolv := 2 > 3;
+num := sv . m_0;
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+boolv := wordv . %X2;
+{#endif}
+{#if not _OMRON}
+boolv := wordv . 3;
+{#endif}
+num := intv;
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI or _CODESYS)}
+iv ?= cv;
+{#endif}
+{#if not (_MITSUBISHI)}
+num := +intv;
+{#endif}
+num := -intv;
+wordv := not wordv;
+boolv := not boolv;
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI or _CODESYS)}
+rv := ref cv;
+cv := rv^;
+{#elif _CODESYS}
+//rv REF= cv;
+cv := rv;
+{#endif}
+num := (intv);
+num := ary[intv];
+{#if not (_CODESYS)}
+boolv := func(intv, 1, num);
+{#else}
+boolv := func(intv, 1, o=>num);
+{#endif}
+boolv := func(i_1:=intv, i_2:=1, o=>num);
+
+// if statement.
+
+if intv = 0 then
+	num := num + 1;
+end_if;
+
+if (intv mod 2) = 0 then
+	num := num + 2;
+else
+	num := num + 1;
+end_if;
+
+if intv > 0 then
+	num := +1;
+elsif intv < 0 then
+	num := -1;
+else
+	num := 0;
+end_if;
+
+// case statement.
+
+case intv of
+2:
+	num := 4;
+3:
+	num := 9;
+4..7:
+	num := intv * intv;
+else
+	num := 0;
+end_case;
+
+// for statement.
+
+for intv := 1 to 4 by 1 do
+	num := num + intv;
+	// exit statement.
+	if num < -1 then
+		exit;
+	end_if;
+{#if not (_OMRON or _MITSUBISHI)}
+	// continue statement.
+	if num = 1 then
+		continue;
+	end_if;
+{#endif}
+end_for;
+
+// while statement.
+
+while intv <= 10 do
+	num := num + intv;
+	intv := intv + 1;
+end_while;
+
+// repeat statement.
+
+repeat
+	num := num + intv;
+	intv := intv + 1;
+until intv = 15 end_repeat;
+//{end}
+end_program

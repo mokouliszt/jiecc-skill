@@ -1,0 +1,20 @@
+type
+{#if not _OMRON}
+	n_t: int (n0 := 2, n1 := 3, n2 := 5) := n0;
+{#else}
+	n_t: dint (n0 := 2, n1 := 3, n2 := 5);
+{#endif}
+end_type
+
+program Main
+	var nv: n_t := n0; end_var
+//{st}
+{#if not (_OMRON or _CODESYS)}
+nv := n_t#n0 + 1;
+{#elif _CODESYS}
+nv := n_t.n0 + 1;
+{#elif _OMRON}
+nv := n_t#n0;
+{#endif}
+//{end}
+end_program

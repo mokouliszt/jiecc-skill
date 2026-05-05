@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<FunctionBlock name="myfb">
+	<Parameters>
+	<InputVars>
+		<Variable name="i_1" orderWithinParamSet="2">
+			<Type><TypeName>bool</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InputVars>
+		<Variable name="i_2" orderWithinParamSet="3">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<InoutVars>
+		<Variable name="pv" orderWithinParamSet="4">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InoutVars>
+	<OutputVars>
+		<Variable name="ov" orderWithinParamSet="5">
+			<Type><TypeName>bool</TypeName></Type>
+		</Variable>
+	</OutputVars>
+	</Parameters>
+	<Vars accessSpecifier="private">
+		<Variable name="vv">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="0" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>vv := vv + 1;
+ov := i_1 and (i_2 = 0) and (pv &gt; 0) and (vv &lt; 9);
+</ST></BodyContent>
+		<BodyContent xsi:type="LD">
+<Rung evaluationOrder="1">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="END">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung>
+<Rung evaluationOrder="2">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="ENDH">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung></BodyContent>
+	</MainBody>
+</FunctionBlock>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="instance">
+			<Type><TypeName>myfb</TypeName></Type>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="intv">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="1" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="boolv">
+			<Type><TypeName>bool</TypeName></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>instance(i_1 := true, i_2 := 0, pv := intv, ov =&gt; boolv);
+</ST></BodyContent>
+		<BodyContent xsi:type="LD">
+<Rung evaluationOrder="1">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="END">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung>
+<Rung evaluationOrder="2">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="ENDH">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung></BodyContent>
+	</MainBody>
+</Program>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="xv">
+			<Type><TypeName>myfb</TypeName></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>;</ST></BodyContent>
+		<BodyContent xsi:type="LD">
+<Rung evaluationOrder="1">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="END">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung>
+<Rung evaluationOrder="2">
+	<LdObject xsi:type="LeftPowerRail">
+		<ConnectionPointOut connectionPointOutId="1" />
+	</LdObject>
+	<FbdObject xsi:type="Block" typeName="ENDH">
+		<InputVariables>
+			<InputVariable parameterName="EN">
+				<ConnectionPointIn><Connection refConnectionPointOutId="1" /></ConnectionPointIn>
+			</InputVariable>
+		</InputVariables>
+		<OutputVariables>
+			<OutputVariable parameterName="ENO">
+				<ConnectionPointOut connectionPointOutId="2"></ConnectionPointOut>
+			</OutputVariable>
+		</OutputVariables>
+	</FbdObject>
+	<LdObject xsi:type="RightPowerRail">
+		<ConnectionPointIn>
+			<Connection refConnectionPointOutId="2" />
+		</ConnectionPointIn>
+	</LdObject>
+</Rung></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

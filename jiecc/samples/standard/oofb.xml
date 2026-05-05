@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="www.iec.ch/public/TC65SC65BWG7TF10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="www.iec.ch/public/TC65SC65BWG7TF10%20IEC61131_10_Ed1_0.xsd" schemaVersion="1.0">
+<FileHeader companyName="" productName="" productVersion="" />
+<ContentHeader name="" creationDateTime="2026-02-15T00:00:00+09:00">
+</ContentHeader>
+<Types><GlobalNamespace>
+<FunctionBlock name="Base">
+	<Parameters>
+	<InputVars>
+		<Variable name="i" orderWithinParamSet="1">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</InputVars>
+	<OutputVars>
+		<Variable name="o" orderWithinParamSet="2">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</OutputVars>
+	</Parameters>
+	<Vars accessSpecifier="private">
+		<Variable name="m">
+			<Type><TypeName>int</TypeName></Type>
+			<InitialValue>
+				<SimpleValue value="1" />
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Method name="f" accessSpecifier="protected">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+		<Body>
+			<BodyContent xsi:type="ST"><ST>f := this^.m + i;</ST></BodyContent>
+		</Body>
+	</Method>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>o := this^.f(i);
+</ST></BodyContent>
+	</MainBody>
+</FunctionBlock>
+<FunctionBlock name="Derived">
+	<Extends><TypeName>Base</TypeName></Extends>
+	<Method name="f" accessSpecifier="protected" override="true">
+		<ResultType><TypeName>int</TypeName></ResultType>
+		<Parameters>
+		<InputVars>
+			<Variable name="i" orderWithinParamSet="1">
+				<Type><TypeName>int</TypeName></Type>
+			</Variable>
+		</InputVars>
+		</Parameters>
+		<Body>
+			<BodyContent xsi:type="ST"><ST>f := this^.m * super^.f(i);</ST></BodyContent>
+		</Body>
+	</Method>
+</FunctionBlock>
+<Program name="Main">
+	<Vars accessSpecifier="private">
+		<Variable name="x">
+			<Type><TypeName>Derived</TypeName></Type>
+			<InitialValue>
+				<StructValue>
+					<Value member="m">
+						<SimpleValue value="3" />
+					</Value>
+				</StructValue>
+			</InitialValue>
+		</Variable>
+	</Vars>
+	<Vars accessSpecifier="private">
+		<Variable name="n">
+			<Type><TypeName>int</TypeName></Type>
+		</Variable>
+	</Vars>
+	<MainBody>
+		<BodyContent xsi:type="ST"><ST>x(i:=2, o=&gt;n);
+</ST></BodyContent>
+	</MainBody>
+</Program>
+</GlobalNamespace></Types>
+<Instances>
+</Instances>
+</Project>

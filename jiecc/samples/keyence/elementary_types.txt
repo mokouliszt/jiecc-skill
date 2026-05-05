@@ -1,0 +1,82 @@
+program Main
+	var
+			// ANY_SIGNED
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_00: sint   :=  0;
+{#endif}
+		v_01: int    :=  1;
+		v_02: dint   :=  2;
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_03: lint   :=  3;
+{#endif}
+			// ANY_UNSIGNED
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_04: usint  :=  4;
+{#endif}
+{#if not (_MITSUBISHI)}
+		v_05: uint   :=  5;
+		v_06: udint  :=  6;
+{#endif}
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_07: ulint  :=  7;
+{#endif}
+			// ANY_REAL
+		v_08: real   :=  0.8;
+		v_09: lreal  :=  0.9;
+			// ANY_DURATION
+		v_16: time   := time#16ms;
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+		v_17: ltime  := ltime#17s;
+{#endif}
+			// ANY_BIT
+		v_20: bool   := bool#1;
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_24: byte   := byte#16#24;
+{#endif}
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_25: word   := word#16#2500;
+		v_26: dword  := dword#16#2600_0000;
+{#elif _MITSUBISHI}
+		v_25: word   := 16#2500;
+		v_26: dword  := 16#2600_0000;
+{#endif}
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_27: lword  := lword#16#2700_0000_0000_0000;
+{#endif}
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI or _CODESYS)}
+			// ANY_CHAR
+		v_30: char   := '$30'; // '0'
+		v_31: wchar  := "$0031"; // '1'
+{#endif}
+			// ANY_STRING
+		v_40: string   := 'No.40'; // note: error in CODESYS, if no size string decl with the initial value.
+{#if not (_OMRON or _KEYENCE)}
+		v_41: wstring  := "No.41";
+{#endif}
+			// ANY_DATE
+{#if not (_KEYENCE or _MITSUBISHI)}
+		// codesys spec. https://content.helpme-codesys.com/en/CODESYS%20Development%20System/_cds_operands_constant_date.html
+		v_50:   date             := date#2050-01-01;
+{#endif}
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+		v_51:   ldate            := ldate#1951-01-01;
+{#endif}
+{#if not (_KEYENCE or _MITSUBISHI)}
+		v_52:   time_of_day      := tod#00:52:01;
+		v_52_2: tod              := tod#12:52:02;
+{#endif}
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+		v_53:   ltime_of_day     := ltod#00:53:01;
+		v_53_2: ltod             := ltod#12:53:02;
+{#endif}
+{#if not (_KEYENCE or _MITSUBISHI)}
+		// codesys spec. https://content.helpme-codesys.com/en/CODESYS%20Development%20System/_cds_operands_constant_date.html
+		v_54:   date_and_time    := dt#2054-01-01-00:54:01;
+		v_54_2: dt               := dt#2054-01-02-00:54:02;
+{#endif}
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+		v_55:   ldate_and_time   := ldt#1955-01-01-00:55:01;
+		v_55_2: ldt              := ldt#1955-01-02-00:55:02;
+{#endif}
+	end_var
+end_program

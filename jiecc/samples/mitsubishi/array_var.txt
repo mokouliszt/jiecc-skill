@@ -1,0 +1,25 @@
+program Main
+	var
+		a_1: array[0..2] of int;
+{#if not (_MITSUBISHI)}
+		a_2: array[0..2] of int := [3, 5, 7];
+{#else}
+		a_2: array[0..2] of int;
+{#endif}
+{#if not (_MITSUBISHI)}
+		a_3: array[0..1, 2..5] of int := [
+			16#02, 16#03, 16#04, 16#05,
+			16#12, 16#13, 16#14, 16#15,
+		];
+{#else}
+		a_3: array[0..1, 2..5] of int;
+{#endif}
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+		a_4: array[-2..+2] of time := [5(time#1ms)];
+{#elif not (_MITSUBISHI)}
+		a_4: array[0..4] of time := [5(time#1ms)];
+{#else}
+		a_4: array[-2..+2] of time;
+{#endif}
+	end_var
+end_program

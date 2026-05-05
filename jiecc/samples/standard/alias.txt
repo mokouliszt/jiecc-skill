@@ -1,0 +1,11 @@
+type
+    int1_t: int := 1;
+    str1024_t: string[1024] := '';
+    t: int1_t;
+end_type
+
+program Main
+    var
+        int1v: t;
+    end_var
+end_program

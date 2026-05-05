@@ -1,0 +1,64 @@
+program Main
+{#if not (_KEYENCE or _MITSUBISHI)}
+	var_external
+		g_intv: int;
+	end_var
+{#endif}
+//{st}
+g_intv := 2;
+//{end}
+end_program
+
+{#if not (_OMRON or _KEYENCE or _MITSUBISHI)}
+configuration cfg
+	var_global
+		gg_boolv at %IX0 : bool;
+		gg_intv: int := 3;
+	end_var
+	var_global retain
+		gg_timev: time := t#13ms;
+	end_var
+
+	resource rsc on plc
+		var_global
+			g_boolv: bool;
+			g_intv: int := 3;
+		end_var
+		var_global retain
+			g_timev: time := t#13ms;
+		end_var
+	end_resource
+end_configuration
+{#elif _OMRON}
+configuration cfg
+	resource rsc on plc
+		var_global
+			g_boolv at %W0.0 : bool;
+			g_intv: int := 3;
+		end_var
+		var_global retain
+			g_timev: time := t#13ms;
+		end_var
+	end_resource
+end_configuration
+{#elif _KEYENCE}
+configuration cfg
+	var_global
+		g_boolv at %R0 : bool;
+		g_intv: int := 3;
+	end_var
+	var_global retain
+		g_timev: time := t#13ms;
+	end_var
+end_configuration
+{#elif _MITSUBISHI}
+configuration cfg
+	var_global
+		g_boolv at %X0 : bool;
+		g_intv: int := 3;
+	end_var
+	var_global retain
+		g_timev: time := t#13ms;
+	end_var
+end_configuration
+{#endif}

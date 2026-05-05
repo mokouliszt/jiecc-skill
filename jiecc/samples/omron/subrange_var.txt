@@ -1,0 +1,6 @@
+program Main
+	var
+		rangev: int(-100..+100) := -100;
+		range_array: array[0..1] of int(-2..+2);
+	end_var
+end_program

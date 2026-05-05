@@ -1,0 +1,5 @@
+{import: "./fb.txt"}
+
+program Main
+var xv: myfb; end_var
+end_program

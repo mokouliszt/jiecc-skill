@@ -1,0 +1,30 @@
+function_block myfb
+	var_input
+		i_1: bool;
+		i_2: int;
+	end_var
+	var_in_out
+		pv: int;
+	end_var
+	var_output
+		ov: bool;
+	end_var
+	var
+		vv: int := 0;
+	end_var
+//{st}
+vv := vv + 1;
+ov := i_1 and (i_2 = 0) and (pv > 0) and (vv < 9);
+//{end}
+end_function_block
+
+program Main
+	var
+		instance: myfb;
+		intv: int := 1;
+		boolv: bool;
+	end_var
+//{st}
+instance(i_1 := true, i_2 := 0, pv := intv, ov => boolv);
+//{end}
+end_program

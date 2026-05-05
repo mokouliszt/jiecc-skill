@@ -1,0 +1,14 @@
+configuration cfg
+	resource rsc1 on plc1
+		var_global
+			g1: bool;
+		end_var
+		var_global retain
+			g2: bool;
+		end_var
+	end_resource
+{#if not (_OMRON)}
+	resource rsc2 on plc2
+	end_resource
+{#endif}
+end_configuration

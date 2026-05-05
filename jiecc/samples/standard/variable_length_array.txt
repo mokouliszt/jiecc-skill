@@ -1,0 +1,25 @@
+
+function sum_value: lreal
+	var_in_out
+		sample: array[*] of lreal;
+	end_var
+	var_temp
+		index, sample_size: dint;
+	end_var
+// {st}
+sum_value := 0.0;
+for index := lower_bound(sample, 1) to upper_bound(sample, 1) do
+	sum_value := sum_value + sample[index];
+end_for;
+// {end}
+end_function
+
+program Main
+var
+	sample: array[0..3] of lreal := [1.0, 2.0, 3.0, 4.0];
+	value: lreal;
+end_var
+//{st}
+value := sum_value(sample); // 10.0 = 1.0+2.0+3.0+4.0
+//{end}
+end_program

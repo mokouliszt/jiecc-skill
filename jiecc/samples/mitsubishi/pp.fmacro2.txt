@@ -1,0 +1,24 @@
+{#define DECL_ADD_FUNCTION(T)
+	function add_@@T: T
+	var_input
+		in1, in2: T;
+	end_var
+	${st$}
+	add_@@T := in1 + in2;
+	${end$}
+	end_function
+}
+
+DECL_ADD_FUNCTION(int);
+DECL_ADD_FUNCTION(lreal);
+
+program Main
+var
+	iv: int;
+	rv: lreal;
+end
+{st}
+iv := add_int(2, 3);
+rv := add_lreal(5.0, 7.0);
+{end}
+end
