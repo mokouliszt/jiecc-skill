@@ -1,4 +1,4 @@
-# jiecc
+# jiecc-skill
 
 フリーソフトウェア [jiecc.exe](https://www.graviness.com/iec_61131-3/jiecc.html)を使用し、　**GX Works3 / Sysmac Studio / KV STUDIO / CODESYS** などにインポート可能な **IEC 61131-10 XML** を生成する [Claude Code](https://docs.claude.com/claude-code) の Skill です。同梱の `jiecc.exe` を使用するため、追加インストール不要で動作します。
 MELSEC(GX Works3)向けの使用を想定して調整しており、特にメーカ指定のない場合はMELSECを想定して動作します。
