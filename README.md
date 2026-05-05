@@ -73,12 +73,6 @@ Copy-Item -Recurse jiecc $HOME\.claude\skills\
 
 インストール後、Claude Code を起動してプログラム実装を依頼するだけです。GX Works3 等へのインポートを意図した実装依頼を Claude が検出すると、自動的に Skill を呼び出して XML 生成を実行します。
 
-質問例:
-
-- 「タイマー FB を ST 言語で作って、GX Works3 にインポートできる形で」
-- 「オムロンのラダー回路を三菱向け ST に移植して」
-- 「KV STUDIO 用の PID 制御 FB を IEC 61131-10 XML で出力して」
-
 ## 出典
 
 IEC 61131-3 / IEC 61131-10 規格、各エンジニアリングツールのインポート仕様
