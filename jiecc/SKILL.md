@@ -45,7 +45,7 @@ description: |
   - 入力XMLにラダー/FBD/SFCが含まれていてもOK（逆変換時は言語制約なし）
 
   ### 5. キーワード明示時
-  - 「Jiecc」「jiecc.exe」「IEC 61131-3」「IEC 61131-10」
+  - 「Jiecc」「jiecc.exe」「IEC 61131-3」「IEC 61131-10」「PLCopen XML」
 
   ### 6. 標準（standard）ターゲット
   メーカー特定なし、または明示的に IEC 61131-10 規格準拠を求められた場合は
@@ -58,7 +58,8 @@ description: |
   - 「三菱でラダー書いて」「GX Works3でラダー回路」
   - 「三菱のFBDで」「GX Works3でSFC組んで」「GX Works3でIL」
   - 「三菱で（言語不明）の制御プログラム書いて、ラダーで」
-  → 本Skillで対応不可。代替手段（GX Works3で直接編集、または別Skill）を案内すること
+  → 本Skillで対応不可。代替手段（GX Works3で直接編集、または将来実装予定の
+    別Skill）を案内すること
 
   ⚠️ ただし**移植案件は例外**: 「オムロンのラダーを三菱に移植」のような場合は
   起動する（入力ラダー → 出力STへの変換作業は本Skillで対応）。
@@ -190,6 +191,7 @@ PowerShell の場合：
 1. GX Works3 で直接編集する（ラダー編集はGX Works3の本来の使い方）
 2. ロジック自体をST言語に置き換えて実装する場合は、改めてSTでのご依頼として
    承ります（ロジックの表現力はSTでも十分）
+3. ラダー対応のSkillは別途実装予定です
 ```
 
 ユーザーが「ではSTで」と切り替えた場合は、通常のST実装フローに進む。
@@ -246,14 +248,15 @@ GX Works3 ではプログラムを「初期/スキャン/待機/定周期/イベ
 
 ```iec
 configuration config1
-    resource MainScan: prgFile
-        // (*{ResourceExecutionType.type: "scan"}*)  // スキャン実行
-        program ProgramScan with tsk1: ProgramScan_pou();
+    resource MainScan on plc
+        program ProgramScan_pou: ProgramScan_pou();
     end_resource
 end_configuration
 ```
 
 `type` の値: `initial`, `scan`, `standby`, `fixedScan`, `event`, `noExecution`
+
+⚠️ **`task` 構文は使わない**: `task tsk1(...)` / `program X with tsk1: ...` の形式は jiecc が `<Task>` 要素を生成するが、GX Works3 はこれを読み込めず「未登録プログラム」扱いになる。task 定義は書かず、`program PouName: PouName();` の形式のみ使う（POU名 == `name` 属性 == `typeName` 属性 が必須）。
 
 ### 公式サンプルの参照
 
@@ -337,7 +340,7 @@ ST本体を `//{st}` ～ `//{end}` で囲むのを忘れない（最頻発エラ
 
 ユーザーには以下のような形で渡す：
 
-> `counter.xml` を生成しました。GX Works3 で「プロジェクト → IEC 61131-10 XML 形式の
+> `counter.xml` を生成しました。GX Works3 で「プロジェクト → IEC 61131-3 XML 形式の
 > ファイルからインポート」を選び、このファイルを取り込んでください。
 > ソースは `counter.txt` に保存してあります（Git管理用）。
 
@@ -346,8 +349,8 @@ ST本体を `//{st}` ～ `//{end}` で囲むのを忘れない（最頻発エラ
 | ツール | 必要バージョン | インポート方法 |
 |---|---|---|
 | GX Works3 | Ver.1.110Q 以降 | プロジェクト → 開く → ファイル種別をXMLに切替、または「XMLファイルからインポート」 |
-| Sysmac Studio | Ver.1.30 以降 | プロジェクト → ライブラリ → IEC 61131-10 XML をインポート |
-| KV STUDIO | Version 12 以降 | プロジェクト → ファイル → IEC 61131-10 XML をインポート |
+| Sysmac Studio | Ver.1.30 以降 | プロジェクト → ライブラリ → IEC 61131-3 XML をインポート |
+| KV STUDIO | Version 12 以降 | プロジェクト → ファイル → IEC 61131-3 XML をインポート |
 | CODESYS | V3.5.21.0 以降 | プロジェクト → 追加 → PLCopen XML をインポート |
 
 詳細はメーカードキュメント参照（バージョンによりUIが変わる）。
@@ -442,6 +445,39 @@ jiecc.exe -d input.xml -o output.txt
 # プリプロセスのみ
 jiecc.exe -E input.txt
 ```
+
+### GX Works3向けXML後処理（fix-gx-xml.py）
+
+jieccが生成したXMLにはGX Works3がインポートできない要素が含まれる場合がある。
+同梱の `scripts/fix-gx-xml.py` で後処理する：
+
+```bash
+# 単一ファイル（上書き）
+python <SKILL_DIR>/scripts/fix-gx-xml.py output.xml
+
+# 単一ファイル（別ファイル出力）
+python <SKILL_DIR>/scripts/fix-gx-xml.py output.xml -o fixed.xml
+
+# 複数ファイル一括（上書き）
+python <SKILL_DIR>/scripts/fix-gx-xml.py *.xml
+```
+
+```powershell
+# PowerShell
+$fixpy = "<SKILL_DIR>\scripts\fix-gx-xml.py"
+python $fixpy output.xml
+```
+
+**fix-gx-xml.py が対処する問題**:
+- `<Task>` 要素の除去（`task` 構文使用時にjieccが生成。GX Works3はこの要素を認識できない）
+- `associatedTaskName` 属性の除去（Taskへの関連付けが失敗してプログラムが「未登録」になる）
+- MotionControl ライブラリ FB 型名の変換（`MC_Power_RD77` → `MC_Power+RD77`）
+  jieccはIEC 61131-3準拠のアンダースコア形式を出力するが、GX Works3はプラス形式のみ認識する。
+  `AXIS_REF`・`TON`等の非MotionControl型は変換しない。
+
+**推奨ワークフロー（三菱向け）**:
+1. ソースに `task` 構文を書かない（根本対策 — `references/mitsubishi.md` セクション6参照）
+2. やむを得ず `task` 構文が含まれる場合は jiecc → fix-gx-xml.py の順に実行
 
 ターゲット名: `standard` (デフォルト) / `omron` / `keyence` / `mitsubishi` / `codesys`
 
