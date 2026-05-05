@@ -41,7 +41,7 @@ jiecc-skill/
 - ユーザースコープ（全プロジェクトで使用）: `~/.claude/skills/`
 - プロジェクトスコープ（特定プロジェクトのみ）: `<プロジェクトルート>/.claude/skills/`
 
-例（macOS / Linux）:
+例（macOS / Linux ※jiecc.exeは動作しません）:
 
 ```bash
 cp -r jiecc ~/.claude/skills/
